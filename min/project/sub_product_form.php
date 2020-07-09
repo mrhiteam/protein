@@ -8,9 +8,9 @@
 <script type="text/javascript" src="./js/login.js"></script>
 </head>
 <script>
-    function remove_member(){
-        window.open("remove_member.php?id=" + document.remove_member_form.id.value,
-         "IDcheck",
+    function remove_product(){
+        window.open("sub_product.php?name=" + document.sub_product_form.name.value,
+         "NAMEcheck",
           "left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
     }
 </script>
@@ -19,16 +19,16 @@
         <?php include "header.php";?>
     </header>
 	<section>
-        <form  name="remove_member_form" method="post" action="remove_member.php">
+        <form  name="sub_product_form" method="post" action="sub_product.php">
         <div class="form id">
-			<div class="col1">삭제하려는 회원의 아이디를 입력하세요</div>
+			<div class="col1">삭제하려는 상품의 이름을 입력하세요</div>
 			<div class="col2">
-				<input type="text" name="id">
+				<input type="text" name="name">
 			</div>  
         </div>
-        <a href="#" onclick="remove_member()">삭제하기</a>
+        <a href="#" onclick="remove_product()">삭제하기</a>
         </form>
-	</section> 
+    </section> 
 </body>
 </html>
 

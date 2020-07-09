@@ -1,40 +1,19 @@
-<?php
-    session_start();
-    if (isset($_SESSION["userid"])) $userid = $_SESSION["userid"];
-    else $userid = "";
-    if (isset($_SESSION["username"])) $username = $_SESSION["username"];
-    else $username = "";
-    if (isset($_SESSION["userlevel"])) $userlevel = $_SESSION["userlevel"];
-    else $userlevel = "";
-    if (isset($_SESSION["userpoint"])) $userpoint = $_SESSION["userpoint"];
-    else $userpoint = "";
-?>		
-        
-<?php
-    if(!$userid) {
-?>                
-        <a href="sign_in_form.php">회원 가입</a> 
-        | 
-        <a href="login_form.php">로그인</a>
-<?php
-    } else {
-                $logged = $username."(".$userid.")님[Level:".$userlevel.", Point:".$userpoint."]";
-?>
-                <?=$logged?> 
-                 | 
-                <a href="logout.php">로그아웃</a> 
-                 | 
-                <a href="member_modify_form.php">정보 수정</a>
-                |
-                <a href="pick_form.php">찜목록</a>
-
-<?php
-    }
-?>
-<?php
-     if($userlevel==1) {
-?>
-        <a href="management_form.php">관리자페이지</a>
-<?php
-    }
-?>
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>PHP 프로그래밍 입문</title>
+<link rel="stylesheet" type="text/css" href="./css/common.css">
+<link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+<body> 
+	<header>
+    	<?php include "header.php";?>
+    </header>
+	<section>
+                
+	</section> 
+	<footer>
+    </footer>
+</body>
+</html>

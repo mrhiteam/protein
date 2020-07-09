@@ -14,10 +14,13 @@
 
 	$sql = "insert into members(id, pass, name, email, regist_day, level, point, address) ";
 	$sql .= "values('$id', '$pass', '$name', '$email', '$regist_day', 9, 0,'$address')";
+	mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
+    mysqli_close($con);   
 
+    $sql = "insert into picked(id,product_1, product_2, product_3, product_4, product_5, product_6, product_count) ";
+	$sql .= "values('$id','','','','','','', 1)";
 	mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
     mysqli_close($con);     
-
     echo "
 	      <script>
 	          location.href = 'index.php';
