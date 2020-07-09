@@ -33,9 +33,10 @@
             |
             <a href="pick_form.php">찜목록</a>
             |
-            <a href="#">주문확인</a>
+            <a href="basket.php">장바구니</a>
             |
-            <a href="#">찜목록</a>
+            <a href="#">주문확인</a>
+            
         </div>
         <div id="main_content">
       		<div id="join_box">

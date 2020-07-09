@@ -7,6 +7,9 @@
 
     <script type="text/javascript" src="./js/login.js"></script>
 </head>
+<style>
+    .button{cursor:pointer; width: 100px; }
+</style>
 <script>
     function add_pick() {
         
@@ -52,8 +55,8 @@
                     <option value="5">5개</option>
                     <option value="6">6개</option>
                 </select>
-                <div style="cursor:pointer" onclick="basket()" >장바구니에 담기</div>
-                <div style="cursor:pointer" onclick="order()" >구매</div>
+                <div class="button" onclick="basket()">장바구니에 담기</div>
+                <div class="button" onclick="order()">구매</div>
 
 
             </div>

@@ -9,10 +9,12 @@
 </head>
 
 <script>
-    function sub_pick(a,b){
-        window.open("sub_pick.php?product_count=" +a+" &total_count="+b,"pick","left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
+    function sub_basket(a){
+        window.open("sub_basket.php?name=" + a ,"basket","left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
+
     }
 </script>
+
 <body>
     <header>
         <?php
@@ -68,34 +70,30 @@
             <a href="basket.php">장바구니</a>
             |
             <a href="#">주문확인</a>
-            
         </div>
         <div>
+            <h2> 장바구니 목록</h2>
             <?php
-            $con = mysqli_connect("localhost", "project", "1234", "project");
-            $count = "select * from picked where id = '$userid'";
-            $result = mysqli_query($con, $count);
-            $count_result = mysqli_fetch_row($result);
-            ?>
+                for($i=1; $i<20;$i++){
+                    if(isset($_SESSION["product'$i'"])){
+                        echo "상품 이름:".$_SESSION["product'$i'"]." 상품개수:".$_SESSION["product'$i'count"]." 상품 가격:".$_SESSION["product'$i'price"];
+                        echo "<br>";
+                        $product=$_SESSION["product'$i'"];
+                        ?>
+                        <a href="basket.php" onclick="sub_basket(<?=$i?>)">장바구니에서 삭제하기</a>
             <?php
-            
-            for($i=2;$i<7;$i++){
-                if($count_result[$i]!=null){
-                    $sql = "select * from product where num = '$count_result[$i]'";
-                    $result_p = mysqli_query($con, $sql);
-                    $product_result = mysqli_fetch_row($result_p);
-                    $c=$i-1;
-            ?>
-                <div>
-                    <h2>당신이 찜한 상품</h2>
-                    <p>상품 이름:<?= $product_result[1] ?></p>
-                    <p>가격:<?= $product_result[3]?></p>
-                    <a href="product_detail.php?num=<?=$product_result[0]?>">구매 페이지로 가기</a>
-                    <a href="pick_form.php" onclick="sub_pick(<?=$c?>,<?=$count_result[8]?>)">찜목록에서 제거</a>
-                </div>
-            <?php
+                        echo "<br>";
+                    }
+                    else{
+                        
+                    }
                 }
-            }
+                if(isset($_SESSION["price"])){
+                    echo"총 가격".$_SESSION["price"];
+                }
+                else{
+                    echo"장바구니에 담은 상품이 없습니다.";
+                }
             ?>
         </div>
         
