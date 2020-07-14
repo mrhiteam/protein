@@ -19,7 +19,7 @@
         <a href="login_form.php">로그인</a>
 <?php
     } else {
-                $logged = $username."(".$userid.")님[Level:".$userlevel.", Point:".$userpoint."]";
+                $logged = $username."(".$userid.")님 등급:".$userlevel.", 보유 포인트:".$userpoint."";
 ?>
                 <?=$logged?> 
                  | 

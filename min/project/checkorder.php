@@ -3,16 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>PHP 프로그래밍 입문</title>
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <title></title>
 </head>
 
 <script>
-    function sub_pick(a,b){
-        window.open("sub_pick.php?product_count=" +a+" &total_count="+b,"pick","left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
-    }
+    
 </script>
+
 <body>
     <header>
         <?php
@@ -68,33 +65,52 @@
             <a href="basket.php">장바구니</a>
             |
             <a href="checkorder.php">주문확인</a>
-            
         </div>
         <div>
+            <h2> 주문확인</h2>
             <?php
             $con = mysqli_connect("localhost", "project", "1234", "project");
-            $count = "select * from picked where id = '$userid'";
-            $result = mysqli_query($con, $count);
-            $count_result = mysqli_fetch_row($result);
-            ?>
-            <?php
-            
-            for($i=2;$i<7;$i++){
-                if($count_result[$i]!=null){
-                    $sql = "select * from product where num = '$count_result[$i]'";
-                    $result_p = mysqli_query($con, $sql);
-                    $product_result = mysqli_fetch_row($result_p);
-                    $c=$i-1;
+            $sql = "select * from orederlist where userid = '$userid' and status !='finish'";
+            $result_order = mysqli_query($con,$sql);
+            $result_ordercount = mysqli_num_rows($result_order);
+            $total_price=0;
+            if($result_ordercount==0){
             ?>
                 <div>
-                    <h2>당신이 찜한 상품</h2>
-                    <p>상품 이름:<?= $product_result[1] ?></p>
-                    <p>가격:<?= $product_result[3]?></p>
-                    <a href="product_detail.php?num=<?=$product_result[0]?>">구매 페이지로 가기</a>
-                    <a href="pick_form.php" onclick="sub_pick(<?=$c?>,<?=$count_result[8]?>)">찜목록에서 제거</a>
+                    <p>주문하신 상품이 없습니다.</p>
                 </div>
-            <?php
+            <?php        
+            }
+            else{
+                for($i=0;$i<$result_ordercount;$i++){
+                    mysqli_data_seek($result_order,$i);
+                    $orderlist = mysqli_fetch_array($result_order);
+                    if($orderlist["status"]=='ready'){
+                        $status='주문대기중';
+                    }
+                    elseif($orderlist["status"]=='going'){
+                        $status='배송중';
+                    }
+                    elseif($orderlist["status"]=='ordered'){
+                        $status="배송완료";
+                    }
+                
+                ?>
+                    <div>
+                       <p>상품명:<?=$orderlist["name"]?> | 주문개수:<?=$orderlist["ordercount"]?> | 가격:<?=$orderlist["price"]?> | 총 가격:<?=$orderlist["price"]*$orderlist["ordercount"]?> | 상태:<?=$status?></p>
+                    </div>
+                <?php
+                    if($status == "배송완료"){
+                        $num = $orderlist['num'];
+                ?>
+                        <a href="modify_order.php?num=<?=$num?>&fin=2">목록에서 제거</a>
+                <?php
+                    }
+                    $total_price = $total_price+($orderlist["price"]*$orderlist["ordercount"]);
                 }
+            ?>
+                <p>총 주문액수:<?=$total_price?></p>
+            <?php
             }
             ?>
         </div>

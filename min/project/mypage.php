@@ -35,7 +35,7 @@
             |
             <a href="basket.php">장바구니</a>
             |
-            <a href="#">주문확인</a>
+            <a href="checkorder.php">주문확인</a>
             
         </div>
         <div id="main_content">

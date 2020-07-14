@@ -14,7 +14,9 @@
     else{
         $sq2 = "DELETE FROM members WHERE id = '$id'";
 
-	    mysqli_query($con, $sq2);  // $sql 에 저장된 명령 실행
+        mysqli_query($con, $sq2);  // $sql 에 저장된 명령 실행
+        $sq3 = "DELETE FROM picked WHERE id = '$id'";
+        mysqli_query($con, $sq3);
         mysqli_close($con);     
         echo "삭제되었습니다.";
     }

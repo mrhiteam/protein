@@ -32,6 +32,7 @@ else{
             $sql = "update picked set product_count = $procount where id = '$userid'";
             mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
             $i=8;
+            echo "찜목록에 추가되었습니다.";
         }
     }
     
@@ -39,11 +40,11 @@ else{
 
 
 mysqli_close($con);
-
+/*
 echo "
           <script>
 	          location.href = 'product_detail.php?num=$num';
 	      </script>
       ";
-  
+  */
 ?>

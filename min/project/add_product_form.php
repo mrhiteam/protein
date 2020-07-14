@@ -76,7 +76,12 @@
 	       	<div class="form">
 		        <div class="col1">카테고리</div>
 		        <div class="col2">
-					<input type="text" name="kategorie">
+                    <select name="kategorie">
+                    <option value="쉐이크/보조제">쉐이크/보조제</option>
+                    <option value="헬스용품">헬스용품</option>
+                    <option value="스포츠웨어">스포츠웨어</option>
+                    <option value="식품">식품</option>
+                </select>
 		        </div>                 
 	       	</div>
 	       	<div class="clear"></div>

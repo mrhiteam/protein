@@ -21,6 +21,10 @@
             <p>회원관리</p>
             <a href="remove_member_form.php">회원삭제</a>
         </div>
+        <div>
+            <a href="orderlist.php">주문목록</a>
+            <a href="modify_order_form.php">주문관리</a>
+        </div>
         
 	</section> 
 </body>

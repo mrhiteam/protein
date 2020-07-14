@@ -7,5 +7,7 @@ create table members (
     regist_day char(20),
     level int,
     point int,
+    address CHAR(100) not null,
+    selphone char(20) not null,
     primary key(num)
 );

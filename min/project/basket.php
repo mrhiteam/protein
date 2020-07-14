@@ -3,15 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>PHP 프로그래밍 입문</title>
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <title></title>
 </head>
 
 <script>
     function sub_basket(a){
-        window.open("sub_basket.php?name=" + a ,"basket","left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
+        window.open("sub_basket.php?name="+a,"basket","left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
 
+    }
+    function order(a){
+        window.open("order.php?price="+a+"&basket=1","order","left=700,top=300,width=700,height=500,scrollbars=no,resizable=yes");
     }
 </script>
 
@@ -69,7 +70,7 @@
             |
             <a href="basket.php">장바구니</a>
             |
-            <a href="#">주문확인</a>
+            <a href="checkorder.php">주문확인</a>
         </div>
         <div>
             <h2> 장바구니 목록</h2>
@@ -90,11 +91,13 @@
                 }
                 if(isset($_SESSION["price"])){
                     echo"총 가격".$_SESSION["price"];
+                    echo"적립 포인트".$_SESSION["price"]*0.01;
                 }
                 else{
                     echo"장바구니에 담은 상품이 없습니다.";
                 }
             ?>
+            <a href="#" onclick="order(<?=$_SESSION['price']?>)">결제하기</a>
         </div>
         
 

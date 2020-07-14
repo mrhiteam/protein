@@ -11,14 +11,16 @@
     .button{cursor:pointer; width: 100px; }
 </style>
 <script>
-    function add_pick() {
-        
+    function add_pick(a) {
+        window.open("add_pick.php?num=" + a,"pick","left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
     }
 
-    function order() {
-        document.order_info.submit();
+    function order(a) {
+        
+        window.open("order.php?price="+a+"&pcount="+document.order_info.count.value+"&basket=0&pname="+document.order_info.name.value,"order","left=700,top=300,width=700,height=500,scrollbars=no,resizable=yes");
     }
     function basket(){
+
         window.open("add_basket.php?name=" + document.order_info.name.value+"&count="+document.order_info.count.value ,"basket","left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
     }
 </script>
@@ -35,6 +37,7 @@
         $sql = "select * from product where num = $num";
         $result = mysqli_query($con, $sql);
         $row = mysqli_fetch_array($result);
+        mysqli_close($con);   
         ?>
         <div>
             <img src="image/<?= $row['image_file'] ?>">
@@ -43,7 +46,8 @@
         </div>
         <form action="order.php" method="POST" name="order_info">
             <div>
-                <a href="add_pick.php?num=<?=$num?>">찜</a>
+                
+                <div class="button" onclick="add_pick(<?=$num?>)">찜목록에 추가</div>
                 <select name="name" >
                     <option value="<?=$row['name']?>"><?= $row['name']?></option>
                 </select>
@@ -56,7 +60,7 @@
                     <option value="6">6개</option>
                 </select>
                 <div class="button" onclick="basket()">장바구니에 담기</div>
-                <div class="button" onclick="order()">구매</div>
+                <div class="button" onclick="order(<?=$row['price']?>)">구매</div>
 
 
             </div>
