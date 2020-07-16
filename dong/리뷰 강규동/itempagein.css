@@ -19,6 +19,7 @@ section {
 .pinfo {
     display: flex;
     flex-direction: row;
+   
 }
 
 .pinfo__img {
@@ -37,3 +38,86 @@ section {
     text-align: right;
 }
 
+.pabout {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.pabout__tabs {
+    display: flex;
+    flex-direction: row; /*div가 아니여도 적용된다. 모든 요소 다 되는 듯*/
+    justify-content: space-around;
+    cursor: pointer;
+    
+}
+
+.tabs__link {
+    padding: 20px;
+}
+
+.tabs__link.current {
+    background: white;
+}
+
+
+
+.tabs__content {
+    display: none;
+        background: white;
+        padding: 12px;
+}
+
+.tabs__content.current {
+    display: inherit;
+}
+
+.question__flex1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* direction으로 먼저 설정하고 justify-content를 실행한다*/
+}
+
+.flex1__write {
+    background-color: white;
+    padding: 10px 20px;
+    
+}
+
+.flex1__write>a {
+    text-decoration: none;
+    color: black;
+}
+
+.content__first {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.content__second {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.aa {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.question__list {
+    padding: 10px;
+}
+
+.question__list>a {
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    font-weight: bold;
+}
