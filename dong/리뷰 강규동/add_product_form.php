@@ -37,6 +37,12 @@
           return;
       }
 
+      if (!document.product_form.info.value){
+          alert("상세정보를 추가하세요!");    
+          document.product_form.info.focus();
+          return;
+      }
+
       document.product_form.submit();
    }
 
@@ -46,6 +52,7 @@
       document.product_form.kategorie.value = "";
       document.product_form.last_day.value = "";
       document.product_form.image_file.value = "";
+      document.product_form.info.value = "";
       document.product_form.name.focus();
       return;
    }
@@ -96,6 +103,13 @@
 		        <div class="col1">이미지</div>
 		        <div class="col2">
 					<input type="file" name="image_file">
+		        </div>                 
+            </div>
+            <div class="clear"></div>
+	       	<div class="form">
+		        <div class="col1">상세 정보</div>
+		        <div class="col2">
+					<input type="file" name="info">
 		        </div>                 
             </div>
 

@@ -11,7 +11,7 @@
 <body>
     <div class ="container">
     <header>
-        <?php include "header2.php"?>
+        <?php include "header.php"?>
     </header>
      <section>
     <h2>주문/결제</h2>
@@ -27,11 +27,26 @@
             <td width="15%">적립금</td>
         </tr>
         <tr>
-       
-            <td>php</td>
-            <td>php</td>
-            <td>php</td>
-            <td>php</td>
+       <?php
+        
+        $num = $_GET['num'];
+        $con = mysqli_connect("localhost", "dior909homme", "ngKan11gGu!", "dior909homme");
+        $sql = "select * from product where num = $num";
+        $result = mysqli_query($con, $sql);
+        $row = mysqli_fetch_array($result);
+        mysqli_close($con);
+        
+        
+            $name = $_POST["name"];
+            $count = $_POST["count"];
+            $price = $_POST["price"];
+            $total = $price * $count;
+            
+       ?>
+            <td><?=$name?></td>
+            <td><?=$count?></td>
+            <td><?=$row['price']?></td>
+            <td><?=$_SESSION["userpoint"]?></td>
         </tr>
       </table>
       </div>
@@ -52,7 +67,7 @@
                              
                 <tr>
                     <td>총 상품 금액</td>
-                    <td align="right">php원</td>
+                    <td align="right"><?=$total?>원</td>
                 </tr>
                 <tr>
                     <td>총 배송비</td>

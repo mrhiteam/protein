@@ -3,7 +3,7 @@ session_start();
 $name = $_GET["name"];
 $count = $_GET['count'];
 
-$con = mysqli_connect("localhost", "project", "1234", "project");
+$con = mysqli_connect("localhost", "dior909homme", "ngKan11gGu!", "dior909homme");
 $sql = "select * from product where name = '$name'";
 $result = mysqli_query($con, $sql);
 $count_result = mysqli_fetch_row($result);

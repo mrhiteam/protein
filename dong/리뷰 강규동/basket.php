@@ -12,7 +12,7 @@
 
     }
     function order(a){
-        window.open("order.php?price="+a+"&basket=1","order","left=700,top=300,width=700,height=500,scrollbars=no,resizable=yes");
+        window.open("pay.php?price="+a+"&basket=1","order","left=700,top=300,width=700,height=500,scrollbars=no,resizable=yes");
     }
 </script>
 

@@ -8,33 +8,22 @@
     <link rel='stylesheet' type='text/css' media='screen' href='itempagein.css?after'>
     <script src="./jquery-3.5.1.js"></script>
     <script type="text/javascript" src="./js/login.js"></script>
-    <script>
-    function add_pick(a) {
-        window.open("add_pick.php?num=" + a,"pick","left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
-    }
-
-    function order(a) {
-        
-        window.open("order.php?price="+a+"&pcount="+document.order_info.count.value+"&basket=0&pname="+document.order_info.name.value,"order","left=700,top=300,width=700,height=500,scrollbars=no,resizable=yes");
-    }
-    function basket(){
-
-        window.open("add_basket.php?name=" + document.order_info.name.value+"&count="+document.order_info.count.value ,"basket","left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
-    }
-</script>
+   
 </head>
 <body>
     <div id="container">
         <header>
-            <?php include "header2.php"; ?>
+            <?php include "header.php"; ?>
         </header>
      <section>
          <?php
+        
          $num = $_GET['num'];
          $con = mysqli_connect("localhost", "dior909homme", "ngKan11gGu!", "dior909homme");
          $sql = "select * from product where num = $num";
          $result = mysqli_query($con, $sql);
          $row = mysqli_fetch_array($result);
+         
          mysqli_close($con);
          ?>
         <div class="pinfo">
@@ -45,7 +34,7 @@
                     <p>eventphp</p>
                 </div>                
                 <div class="box info__price">
-                    <div class="price__origin"><?=$row['price']?></div>
+                    <div class="price__origin"><?=$row['price']?>원</div>
                     <div class="price__credit"><p><?=$_SESSION['userpoint']?></p></div>
                 </div>                
                 <div class="box info__status">
@@ -54,29 +43,26 @@
                     <p>벨지안 블루</p>
                     <p>무이자 php</p>
                 </div>
-                <form name="form1" method="POST" action="pay.php">
-                <div class="box info__option">
-                 <p>추가 옵션 <select>
-                    <option>php</option>
-                    <option>php</option>
-                    <option>php</option>
-                    <option>php</option>
-                </select> </p>
-                <p>수량 <select>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select> 개</p>
+                <form name="form1" method="POST" action="order.php">
+                    <div class="box info__option" name="opt">
+                        <select name="name">
+                    <option id="oname" value="<?=$row['name']?>"><?=$row['name']?></option>
+                     </select> 
+                수량 <select name="count" id="count">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>개
                 </div>
-                <div class="box info__total">
-                    <p>총 php원</p>
-                    <p>적립금 php원</p>
-                </div>
+                
                 <div class="box info__other">
-                    <input type="button" name="basket" value="장바구니 담기">
-                    <input type="button" name="zzim" value="🎀">
-                    <input type="submit" name="pay" value="결제하기">
+                    <input type="button" onclick="basket()" value="장바구니 담기">
+                    <input type="button" onclick="add_pick(<?=$num?>)" name="zzim" value="🎀">
+                    <input type="button" onclick="order(<?=$row['price']?>)" value="결제하기">
                 </div>
                 </form>
             </div>
@@ -89,12 +75,12 @@
                 <li class="tabs__link" data-tab="tab-4">배송 환불 정보</li>
             </ul>
             <div id="tab-1" class="tabs__content current">
-                php
+                <img src="image/<?=$row['info']?>"<??>
             </div>
             <div id="tab-2" class="tabs__content">
                 <div class="question__flex1">
                     <div class="flex1__write">
-                        <a href="writeq.php">리뷰 작성하기</a>
+                        <a href="writeq.php" onclick="">리뷰 작성하기</a>
                     </div>
                 </div>
                 <div class="question__content">
@@ -147,12 +133,17 @@
                 </div>
             </div>
             <div id="tab-4" class="tabs__content">
-                php
+                <img src="image/refund.jpg" alt="refund">
             </div>
             </div>
         </div>
      </section>   
+     <footer>
+         <?php include "footer.php"; ?>
+     </footer>
     </div>
+    
     <script src="itempagein.js"></script>
+    <script src="pageinpopup.js"></script>
 </body>
 </html>

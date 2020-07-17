@@ -72,7 +72,7 @@
         </div>
         <div>
             <?php
-            $con = mysqli_connect("localhost", "project", "1234", "project");
+            $con = mysqli_connect("localhost", "dior909homme", "ngKan11gGu!", "dior909homme");
             $count = "select * from picked where id = '$userid'";
             $result = mysqli_query($con, $count);
             $count_result = mysqli_fetch_row($result);

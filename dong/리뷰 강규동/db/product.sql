@@ -6,6 +6,6 @@ create table product (
     regist_day char(20),
     last_day char(20) not null,
     kategorie char(20) not null,
-    image_file varchar(100),
+    image_file varchar(100)
     primary key(num)
 );

@@ -13,7 +13,7 @@
     </header>
 	<section>
         <?php
-        $con = mysqli_connect("localhost", "project", "1234", "project");
+        $con = mysqli_connect("localhost", "dior909homme", "ngKan11gGu!", "dior909homme");
         $sql = "select * from orederlist";
         $result_order = mysqli_query($con,$sql);
         $result_ordercount = mysqli_num_rows($result_order);
