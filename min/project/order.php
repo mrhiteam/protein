@@ -41,6 +41,9 @@
         $_SESSION['order_pname'] = $pname;
         $_SESSION['order_pcount'] = $pcount;
     }
+    if($basket==1){
+        $_SESSION['order_basket'] = $basket;
+    }
 ?>
     <form name="order_form" method="post" action="pay.php">
         <div>

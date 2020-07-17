@@ -2,8 +2,15 @@
 <html>
 <head> 
 <meta charset="utf-8">
-<title></title>
-
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/jquery-migrate-1.4.1.min.js"></script>
+	<script src="js/jquery.color-2.1.2.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="https://kit.fontawesome.com/367c26cb8d.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/header-footer.css">
 <script>
    function check_input()
    {
@@ -22,12 +29,6 @@
       if (!document.product_form.kategorie.value) {
           alert("카테고리를 입력하세요!");    
           document.product_form.kategorie.focus();
-          return;
-      }
-
-      if (!document.product_form.last_day.value) {
-          alert("유통기한을 입력하세요!");    
-          document.product_form.last_day.focus();
           return;
       }
 
@@ -86,18 +87,12 @@
 	       	</div>
 	       	<div class="clear"></div>
 	       	<div class="form">
-		        <div class="col1">유통기한</div>
-		        <div class="col2">
-					<input type="text" name="last_day">
-		        </div>                 
-            </div>
-            <div class="clear"></div>
-	       	<div class="form">
 		        <div class="col1">이미지</div>
 		        <div class="col2">
 					<input type="file" name="image_file">
 		        </div>                 
             </div>
+            <p>*이벤트<input type="radio" name="event" value="1"> 활성화 <input type="radio" name="event" value="0"> 비활성화</p>
 
 	       	<div class="buttons">
                 <a href="#" onclick="check_input()">추가하기</a>

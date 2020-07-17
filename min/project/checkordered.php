@@ -30,7 +30,7 @@
         })
 
         function checkpage(a){    
-            location.href = 'checkorder.php?checkpage='+a;
+	        location.href = 'checkordered.php?checkpage='+a;
         }
 
         function sub_pick(a, b) {
@@ -46,11 +46,11 @@
     </header>
     <?php
     $con = mysqli_connect("localhost", "project", "1234", "project");
-    $sql = "select * from orederlist where userid = '$userid' and status !='finish'";
+    $sql = "select * from orederlist where userid = '$userid' and status ='finish'";
     $result_order = mysqli_query($con, $sql);
     if(isset($_GET["checkpage"])){
-        $checkpage = $_GET["checkpage"];
-        }
+    $checkpage = $_GET["checkpage"];
+    }
     $result_ordercount = mysqli_num_rows($result_order) - 1;
     $total_price=0;
     $count_split=mysqli_num_rows($result_order);
@@ -100,7 +100,7 @@
                 <div id="list">
                     <div class="mypage_subtitle">
                         <div>
-                            <h2>주문/배송조회</h2>
+                            <h2>구매내역</h2>
                         </div>
                         
                     </div>
@@ -116,7 +116,7 @@
                         if ($result_ordercount == -1) {
                         ?>
                             <div>
-                                <p>주문하신 상품이 없습니다.</p>
+                                <p>구매하신 상품이 없습니다.</p>
                             </div>
                             <?php
                         } else {
@@ -139,9 +139,9 @@
                                     $status = '배송중';
                                 } elseif ($orderlist["status"] == 'ordered') {
                                     $status = "배송완료";
+                                } else{
+                                    $status = "리뷰쓰기";
                                 }
-
-
 
                             ?>
                                 <ul class="order_style2">
@@ -154,10 +154,9 @@
                                         <?= $orderlist["name"] ?> <?= $orderlist["ordercount"] ?>개
                                     </li>
                                     <li><?= $orderprice ?></li>
-                                    <li><?=$status?></li>
+                                    <li><?= $status ?></li>
                                 </ul>
                         <?php
-                                $total_price = $total_price+($orderlist["price"]*$orderlist["ordercount"]);
                             }
                             
                         }
@@ -180,7 +179,17 @@
         </div>
     </section>
     <?php
-    mysqli_close($con);
+    mysqli_close($con);/*
+    for ($i = 0; $i <10; $i++) {
+        mysqli_data_seek($result_order, $result_ordercount-($i*$checkpage));
+        $orderlist = mysqli_fetch_array($result_order);
+        $orderprice = $orderlist["price"] * $orderlist["ordercount"];
+        $prod_id = $orderlist["product_id"];
+        $sql = "select * from product where num = '$prod_id'";
+        $result_product = mysqli_query($con, $sql);
+        $product = mysqli_fetch_array($result_product);
+        $total_price = $total_price+($orderlist["price"]*$orderlist["ordercount"]);
+    }*/
     ?>
     <footer>
         <?php include "footer.php"; ?>
@@ -188,3 +197,4 @@
 </body>
 
 </html>
+
