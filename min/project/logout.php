@@ -4,6 +4,8 @@
   unset($_SESSION["username"]);
   unset($_SESSION["userlevel"]);
   unset($_SESSION["userpoint"]);
+  unset($_SESSION["useraddr"]);
+  unset($_SESSION["usert_price"]);
   unset($_SESSION["price"]);
   for($i=1;$i<20;$i++){
     unset($_SESSION["product'$i'"]);

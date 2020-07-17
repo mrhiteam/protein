@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="js/jquery.color-2.1.2.min.js"></script> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script
+      src="https://kit.fontawesome.com/367c26cb8d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+
+    <title>벨지안 블루</title>
+    <script>
+      var SetTime = 10000; // 최초 설정 시간(기본 : 초)
+
+      function msg_time() {
+        // 1초씩 카운트
+
+        m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초"; // 남은 시간 계산
+
+        var msg =
+          "특별 할인 구매 가능 시간 <font color='red'>" +
+          m +
+          "</font> 남았습니다.";
+
+        document.all.Timer.innerHTML = msg; // div 영역에 보여줌
+
+        SetTime--; // 1초씩 감소
+
+        if (SetTime < 0) {
+          // 시간이 종료 되었으면..
+
+          clearInterval(tid); // 타이머 해제
+          alert("종료");
+        }
+      }
+
+      window.onload = function TimerStart() {
+        tid = setInterval("msg_time()", 1000);
+      };
+    </script>
+
+    <style>
+      * {
+        font-family: "Noto Sans KR", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      #top {
+        width: 100%;
+        height: 60px;
+        background-color: aquamarine;
+      }
+
+      header {
+        width: 100%;
+      }
+
+      .section {
+        position: relative;
+      }
+      .inner {
+        width: 1024px;
+        box-sizing: border-box;
+        margin: 0 auto;
+      }
+      header > .inner {
+        display: flex;
+        justify-content: space-between;
+        height: 150px;
+        position: relative;
+      }
+      #logo {
+        width: 180px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+      }
+      #logo > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #logo > a img {
+        width: 100%;
+      }
+      /* HEADER */
+      header > .inner a {
+        color: rgba(0, 0, 0, 0.479);
+        font-size: 15px;
+        margin: 10px;
+      }
+      header > .inner a:hover {
+        color: black;
+      }
+      li {
+        list-style-type: none;
+        display: inline;
+      }
+      nav {
+        width: 100%;
+        height: 45px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.158);
+      }
+      nav .inner {
+        position: relative;
+      }
+      nav .inner ul {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      nav .inner li > a {
+        font-size: 18px;
+        padding: 10px;
+        margin-left: 30px;
+        display: inline-block;
+      }
+      #categori > i {
+        font-size: 18px;
+        padding: 13px;
+        cursor: pointer;
+      }
+
+      footer {
+        height: 270px;
+        background-color: #5e7c85af;
+      }
+      #footmenu {
+        position: relative;
+      }
+      #footmenu li > a {
+        font-size: 15px;
+        padding: 14px;
+        color: rgba(255, 255, 255, 0.699);
+      }
+      #footmenu li > a:hover {
+        color: white;
+        text-shadow: 0px 0px 3px black;
+      }
+      #footmenu li > a:first-child {
+        margin-left: 0;
+      }
+      #info {
+        width: 50%;
+        border-right: 1px solid white;
+        margin-top: 30px;
+      }
+      #footlogo {
+        width: 144px;
+        margin-top: 120px;
+      }
+      #footlogo img {
+        width: 100%;
+      }
+      footer > div:last-child {
+        display: flex;
+        justify-content: space-between;
+      }
+      footer p {
+        line-height: 2em;
+        color: rgba(255, 255, 255, 0.699);
+      }
+
+      /* SWIPER */
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      .img__size {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-button-next {
+        background: none;
+      }
+      .swiper-container-s {
+        width: 1000px;
+        height: 400px;
+      }
+
+      @media screen and (max-width: 800px) {
+        .swiper-button-next,
+        .swiper-button-prev {
+          display: none;
+        }
+      }
+
+      /* SECTION */
+      .bestItem {
+        display: flex;
+        justify-content: space-around;
+
+        /* margin-right: 20px; */
+      }
+      .bestItem iframe {
+        width: 48%;
+      }
+
+      .bestItem .bestItem__item {
+        /* display: flexbox;
+        justify-content: center; */
+        /* align-items: center; */
+        width: 48%;
+        background-color: #f2f2f2;
+      }
+      .bestItem .bestItem__item img {
+        width: 50%;
+        height: 300px;
+      }
+
+      .sale {
+        display: inline-flex;
+      }
+      .review {
+        display: flex;
+        justify-content: space-around;
+      }
+      .review__view {
+        display: flex;
+      }
+      .review__view .review__view__s {
+        width: 400px;
+        height: 500px;
+        border: 1px solid #f2f2f2;
+      }
+
+      .review__view .review__view__s img {
+        width: 300px;
+        height: 300px;
+      }
+      /* 기능 */
+      .text--center {
+        text-align: center;
+      }
+
+      .margin--top {
+        margin-top: 40px;
+        border-top: 1px solid rgba(0, 0, 0, 0.158);
+      }
+      .margin--bottom {
+        margin-bottom: 40px;
+      }
+      .fontOrange {
+        font-weight: bolder;
+        color: #ff7f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">상단광고창</div>
+    <header>
+      <div class="inner">
+        <ul>
+          <li>
+            <a href="login.html">로그인</a>
+          </li>
+          <li>
+            <a href="mypage-orderChk.html">주문/배송조회</a>
+          </li>
+          <li>
+            <a href="customercenter.html">고객센터</a>
+          </li>
+          <li>
+            <a href="join.html">회원가입</a>
+          </li>
+        </ul>
+        <div id="logo">
+          <a href="mainpage"><img src="image/logo4.png" alt="logo" /></a>
+        </div>
+        <ul>
+          <li>
+            <a href="mypage-basket.html">
+              <i class="xi-cart">장바구니</i>
+            </a>
+          </li>
+          <li>
+            <a href="mypage.html">
+              <i class="xi-home">마이페이지</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <nav>
+        <div class="inner">
+          <a href="#" id="categori">
+            <i class="xi-list"> 카테고리</i>
+          </a>
+          <ul>
+            <li>
+              <a href="newitem.html">신상품</a>
+            </li>
+            <li>
+              <a href="bestitem.html">인기상품</a>
+            </li>
+            <li>
+              <a href="tippage.html">건강 꿀 팁!</a>
+            </li>
+            <li>
+              <a href="event.html">이벤트</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="swiper-container swiper-container-m">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            class="img__size"
+            src="image/슬라이드 사진/2.jpg"
+            alt="메인 슬라이드"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="img__size"
+            src="image/슬라이드 사진/3.jpg"
+            alt="메인 슬라이드"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="img__size"
+            src="image/슬라이드 사진/4.jpg"
+            alt="메인 슬라이드"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="img__size"
+            src="image/슬라이드 사진/5.jpg"
+            alt="메인 슬라이드"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="img__size"
+            src="image/슬라이드 사진/6.jpg"
+            alt="메인 슬라이드"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="img__size"
+            src="image/슬라이드 사진/7.jpg"
+            alt="메인 슬라이드"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="img__size"
+            src="image/슬라이드 사진/8.jpg"
+            alt="메인 슬라이드"
+          />
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <section class="section">
+      <article class="text--center">
+        <p class="margin--top">BEST PRODUCT</p>
+        <h2 class="margin--bottom">벨지안 블루 실시간 BEST 상품</h2>
+
+        <div class="swiper-container swiper-container-s">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div><img src="image/슬라이드 사진2/1.jpg" alt="" /></div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="img__size"
+                src="image/슬라이드 사진2/2.jpg"
+                alt="베스트 상품 슬라이드"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="img__size"
+                src="image/슬라이드 사진2/3.jpg"
+                alt="베스트 상품 슬라이드"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="img__size"
+                src="image/슬라이드 사진2/4.jpg"
+                alt="베스트 상품 슬라이드"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="img__size"
+                src="image/슬라이드 사진2/5.jpg"
+                alt="베스트 상품 슬라이드"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="img__size"
+                src="image/슬라이드 사진2/6.jpg"
+                alt="베스트 상품 슬라이드"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="img__size"
+                src="image/슬라이드 사진2/7.jpg"
+                alt="베스트 상품 슬라이드"
+              />
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <p class="margin--top">건강한 뉴스</p>
+        <h2 class="margin--bottom">벨지안 블루 건강한 팁</h2>
+        <div class="bestItem inner">
+          <iframe
+            width="500"
+            height="450"
+            src="https://www.youtube.com/embed/3NSgf8NVZGo"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <!-- 한정 판매 -->
+          <div class="bestItem__item">
+            <h3>한정 판매 세일</h3>
+            <a href="#">
+              <img src="image/상품/벨트.jpg" alt="벨트" />
+            </a>
+            <a href="#"> <p>하빈저 벨트</p></a>
+            <div>
+              <p class="fontOrange">20% 특별 할인</p>
+              <del>35,000원 </del> <i class="xi-angle-right-thin"></i> 28,000원
+            </div>
+            <div id="Timer"></div>
+          </div>
+        </div>
+
+        <!-- 두톰 토스 결제 -->
+        <div class="sale margin--top">
+          <a href="#">
+            <img src="/image/배너/두툼.jpg" alt="두툼" />
+          </a>
+          <a href="#">
+            <img src="/image/배너/토스.jpg" alt="토스" />
+          </a>
+        </div>
+
+        <!-- 회원 리뷰-->
+        <p class="margin--top">REVIEW</p>
+        <ul class="review margin--bottom">
+          <li></li>
+          <li><h2>벨지안 블루 회원들의 생생한 리뷰</h2></li>
+          <li><a href="#">더 보기</a></li>
+        </ul>
+
+        <div class="review__view inner">
+          <div class="review__view__s">
+            <a href="#"
+              ><img src="image/고객리뷰/흑우.png" alt="흑우" />
+              <p>이 재현 하다</p></a
+            >
+          </div>
+          <div class="review__view__s">
+            <a href="#"
+              ><img src="image/고객리뷰/개구리.jpg" alt="흑우" />
+              <p>매우 재현스럽다</p></a
+            >
+          </div>
+          <div class="review__view__s">
+            <a href="#"
+              ><img src="image/고객리뷰/약쟁이.jpg" alt="흑우" />
+              <p>재현 하다</p></a
+            >
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <h3>자주 묻는 질문</h3>
+            <table border="1px solid black">
+              <tr>
+                <td>흑우새끼</td>
+                <td>멍청함</td>
+              </tr>
+              <tr>
+                조죔
+              </tr>
+            </table>
+          </div>
+          <div>
+            <h3>공지 사항</h3>
+          </div>
+          <div>
+            <h3>전화 상담</h3>
+            <div>
+              질문 리스트
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <footer>
+      <nav>
+        <div class="inner">
+          <ul id="footmenu">
+            <li>
+              <a href="">이용약관</a>
+            </li>
+            <li>
+              <a href="">개인정보 처리방침</a>
+            </li>
+            <li>
+              <a href="">고객센터</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="inner">
+        <div id="info">
+          <p>
+            (주)벨지안블루 | 대표이사:송민석, 서울시 성동구 왕십리로 303 4층
+            <br />통신판매업신고번호:제2020-서울왕십리-2222 |
+            개인정보보호책임자:강규동 <br />호스팅제공자:(주)벨지안블루 |
+            belgianmail@belgian.co.kr <br />고객상담:1544-1234(쇼핑몰) |
+            070-022-2222(제품 및 매장 외) <br /><sub
+              >© BELGIAN CORPORATION. ALL RIGHTS RESERVED.</sub
+            >
+          </p>
+        </div>
+
+        <a href="mainpage.html" id="footlogo"
+          ><img
+            src="image/logo5.png"
+            alt="logo"
+            onmouseover="this.src='image/logo6.png'"
+            onmouseout="this.src='image/logo5.png'"
+        /></a>
+      </div>
+    </footer>
+
+    <script>
+      const openButton = document.querySelector("#open");
+
+      const modal = document.querySelector(".modal");
+
+      const closeButton = modal.querySelector("button");
+      const openModal = function () {
+        modal.classList.remove("hidden");
+      };
+      const closeModal = function () {
+        modal.classList.add("hidden");
+      };
+
+      closeButton.addEventListener("click", closeModal);
+      openButton.addEventListener("click", openModal);
+    </script>
+
+    <script>
+      var swiper = new Swiper(".swiper-container-m", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        keyboard: {
+          enabled: true,
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      var swiper = new Swiper(".swiper-container-s", {
+        slidesPerView: 1,
+        spaceBetween: 40,
+        loop: true,
+        keyboard: {
+          enabled: true,
+        },
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          1000: {
+            slidesPerView: 1,
+            spaceBetween: 40,
+          },
+          1240: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

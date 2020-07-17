@@ -13,20 +13,20 @@
               
     $con = mysqli_connect("localhost", "project", "1234", "project");
     
-	$sql = "insert into members(id, pass, name, email, regist_day, level, point, address,selphone) ";
-	$sql .= "values('$id', '$pass', '$name', '$email', '$regist_day', 9, 0,'$address','$selphone')";
+	$sql = "insert into members(id, pass, name, email, regist_day, level, point, address,selphone,t_price) ";
+	$sql .= "values('$id', '$pass', '$name', '$email', '$regist_day', 9, 0,'$address','$selphone',0)";
 	mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
     $sql = "insert into picked(id,product_1, product_2, product_3, product_4, product_5, product_6, product_count) ";
 	$sql .= "values('$id','','','','','','', 0)";
 	mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
     mysqli_close($con);   
-    /*  
+      
     echo "
 	      <script>
 	          location.href = 'index.php';
 	      </script>
       ";
-      */
+      
 ?>
 
    

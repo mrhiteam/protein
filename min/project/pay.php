@@ -27,7 +27,7 @@ $phone = $_POST['phone'];
                 $sql = "select * from product where name = '$pname'";
                 $result_p = mysqli_query($con,$sql);
                 $p_result = mysqli_fetch_row($result_p);
-                $sql = "insert into orederlist values('','$p_result[1]', '$p_result[0]', '$p_result[3]', '$pcount', '$regist_day', '$p_result[6]', '$addr', '$userid' ,'$useremail' ,'$phone')";
+                $sql = "insert into orederlist values('','$p_result[1]', '$p_result[0]', '$p_result[3]', '$pcount', '$regist_day', '$p_result[6]', '$addr', '$userid' ,'$useremail' ,'$phone','ready')";
                 mysqli_query($con,$sql);
                 mysqli_close($con);
             }

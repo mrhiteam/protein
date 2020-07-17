@@ -96,22 +96,6 @@
                     }
 
             }
-            /*
-            if($row['kategorie']=="쉐이크/보조제"){
-                if($temp[0]==1){
-                ?>
-                    <h2>쉐이크/보조제</h2>
-                <?php
-                    $temp[0]=2;
-                }
-                ?>
-                <div>
-                    <a href="product_detail.php?num=<?=$row['num']?>"><img src="image/<?= $row['image_file'] ?>"></a>
-                    <p>상품 이름:<?= $row['name'] ?></p>
-                    <p>가격:<?= $row['price'] ?></p>
-                </div>    
-            <?php
-            }*/
         }
         ?>
     </section>

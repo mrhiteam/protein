@@ -40,9 +40,12 @@
             session_start();
             $_SESSION["userid"] = $row["id"];
             $_SESSION["username"] = $row["name"];
+            $_SESSION["useraddr"] = $row["address"];
             $_SESSION["userlevel"] = $row["level"];
             $_SESSION["userpoint"] = $row["point"];
             $_SESSION["useremail"] = $row["email"];
+            $_SESSION["usert_price"] =$row["t_price"];
+
 
             echo("
               <script>
