@@ -26,13 +26,13 @@
 		$result = mysqli_query($con, $sql_1);
 		$count = mysqli_fetch_array($result);
 		?>
-		<h2>인기상품</h2>
+		<h2>신상품</h2>
 		<?php
 		for ($a = 1; $a <= $count[0]; $a++) {
 			$sql = "select * from product where num = $a";
 			$result = mysqli_query($con, $sql);
 			$row = mysqli_fetch_array($result);
-			if ($row['hot'] == 1) {
+			if ($row['new'] == 1) {
 		?>
 				<div>
 					<a href="product_detail.php?num=<?= $row['num'] ?>"><img src="image/<?= $row['image_file'] ?>"></a>

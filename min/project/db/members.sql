@@ -9,5 +9,6 @@ create table members (
     point int,
     address CHAR(100) not null,
     selphone char(20) not null,
+    t_price char(20) not null,
     primary key(num)
 );

@@ -33,34 +33,19 @@
 			return;
 		}
 
-		if (!document.member_form.name.value) {
-			alert("이름을 입력하세요!");
-			document.member_form.name.focus();
+		if (!document.member_form.pass_confirm.value) {
+			alert("신규비밀번호을 입력하세요!");
+			document.member_form.pass_confirm.focus();
 			return;
 		}
-
-		if (!document.member_form.address.value) {
-			alert("주소를 입력하세요!");
-			document.member_form.address.focus();
+		if (document.member_form.pass.value ==
+			document.member_form.pass_confirm.value) {
+			alert("비밀번호가 같습니다.\n다시 입력해 주세요!");
+			document.member_form.pass.focus();
+			document.member_form.pass.select();
 			return;
 		}
-
-		if (!document.member_form.email1.value) {
-			alert("이메일 주소를 입력하세요!");
-			document.member_form.email1.focus();
-			return;
-		}
-
-		if (!document.member_form.email2.value) {
-			alert("이메일 주소를 입력하세요!");
-			document.member_form.email2.focus();
-			return;
-		}
-		if (!document.member_form.selphone.value) {
-			alert("전화번호를 입력하세요!");
-			document.member_form.selphone.focus();
-			return;
-		}
+		
 
 		document.member_form.submit();
 	}
@@ -127,19 +112,11 @@
 				</ul>
 			</nav>
 			<article>
-				<form name="member_form" method="post" action="modify_members.php?id=<?= $userid ?>">
+				<form name="member_form" method="post" action="modify_password.php?id=<?= $userid ?>">
 					<h2>회원정보 수정<span>MY INFO</span></h2>
 					<p>회원님의 정보를 수정하실 수 있습니다.</p>
-					<p>*이름<input type="text" name="name" value="<?= $name ?>"></p>
-					<p>*아이디<?= $userid ?></p>
-					<p>*비밀번호<input type="password" name="pass"></p>
-					<div>
-						<a href="modify_password_form.php">비밀번호 변경하기</a>
-					</div>
-					<p>*생년월일<input type="date"></p>
-					<p>*이메일<input type="text" name="email1" value="<?= $email1 ?>">@<input type="text" name="email2" value="<?= $email2 ?>"></p>
-					<p>*연락처<input type="text" name="selphone" value="<?= $phone ?>"></p>
-					<p>*주소<input type="text" name="address" value="<?= $address ?>"></p>
+					<p>*기존비밀번호<input type="password" name="pass"></p>
+					<p>*신규비밀번호<input type="password" name="pass_confirm"></p>
 				</form>
 				<a href="#" onclick="check_input('<?=$pass?>')">수정하기</a>
 				<div>

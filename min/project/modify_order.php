@@ -6,9 +6,6 @@
         $sql = "update orederlist set status = 'going' where num = '$num'";
     }
     elseif($fin==1){
-        $sql = "update orederlist set status = 'ordered' where num = '$num'";
-    }
-    else{
         $sql = "update orederlist set status = 'finish' where num = '$num'";
     }
     mysqli_query($con,$sql);
