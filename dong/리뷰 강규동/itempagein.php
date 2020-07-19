@@ -23,7 +23,20 @@
          $sql = "select * from product where num = $num";
          $result = mysqli_query($con, $sql);
          $row = mysqli_fetch_array($result);
-         
+         $name = $row['name'];
+         $price = $row['price'];
+
+         if ($name = "%시미켄%") {
+             $event = "구매 시 시미켄파티 무료권을 드립니다!";
+         } else {
+             $event = "해당 물품 행사 내용이 없습니다..";
+         }
+
+         if ($price <= 20000) {
+             $sendfee = "무료";
+         } else {
+             $sendfee = "2500원";
+         }
          mysqli_close($con);
          ?>
         <div class="pinfo">
@@ -31,19 +44,20 @@
             <div class="pinfo__info">
                 <div class="box info__name">
                     <p><?=$row['name']?></p>
-                    <p>eventphp</p>
+                    <p><?=$event?></p>
                 </div>                
                 <div class="box info__price">
                     <div class="price__origin"><?=$row['price']?>원</div>
                     <div class="price__credit"><p><?=$_SESSION['userpoint']?></p></div>
                 </div>                
                 <div class="box info__status">
-                    <p>판매중/매진 php</p>
-                    <p>배송비 2500원 if ??? 이상 무료</p>
+                    <p><?=$row['status']?></p>
+                    <p>배송비 <?=$sendfee?></p>
                     <p>벨지안 블루</p>
-                    <p>무이자 php</p>
+                    <button onclick="muiza()">무이자 할부 정보</button>
+                  
                 </div>
-                <form name="form1" method="POST" action="order.php">
+                
                     <div class="box info__option" name="opt">
                         <select name="name">
                     <option id="oname" value="<?=$row['name']?>"><?=$row['name']?></option>
@@ -64,7 +78,7 @@
                     <input type="button" onclick="add_pick(<?=$num?>)" name="zzim" value="🎀">
                     <input type="button" onclick="order(<?=$row['price']?>)" value="결제하기">
                 </div>
-                </form>
+              
             </div>
         </div>
         <div class="pabout">
@@ -80,18 +94,11 @@
             <div id="tab-2" class="tabs__content">
                 <div class="question__flex1">
                     <div class="flex1__write">
-                        <a href="writeq.php" onclick="">리뷰 작성하기</a>
+                        <button onclick = "star()">리뷰 작성하기</button>
                     </div>
                 </div>
                 <div class="question__content">
-                    <div class="content__first">
-                        <div class="first__star">php</div>
-                        <div class="first__title">php</div>
-                        <div class="first__name">php</div>
-                    </div>
-                    <div class="content__second">
-                        php
-                    </div>
+                   <?php include 'starlist.php'?>
                 </div>
                 <div class="aa question__search">
                 <form name="form1" method="POST" action="qsearch.php">
@@ -108,17 +115,11 @@
             <div id="tab-3" class="tabs__content">
                 <div class="question__flex1">
                     <div class="flex1__write">
-                        <a href="writeq.php">문의 작성하기</a>
+                        <button onclick = "qna()">문의 작성하기</button>
                     </div>
                 </div>
                 <div class="question__content">
-                    <div class="content__first">
-                        <div class="first__title">php</div>
-                        <div class="first__name">php</div>
-                    </div>
-                    <div class="content__second">
-                        php
-                    </div>
+                   
                 </div>
                 <div class="aa question__search">
                 <form name="form1" method="POST" action="qsearch.php">
