@@ -12,7 +12,7 @@
             document.order_form.acount.focus();
             return;
         }
-        if(!document.order_form.addr.value){
+        if(!document.order_form.address.value){
             alert("주소를 입력하세요");
             document.order_form.addr.focus();
             return;
@@ -44,16 +44,49 @@
 ?>
     <form name="order_form" method="post" action="pay.php">
         <div>
-            <p>계좌번호:</p>
+           
+            
+            <p>계좌번호</p>
             <input type="text" name="acount">
-            <p>배송주소:</p>
-            <input type="text" name="addr">
-            <P>배송 확인 전화번호</P>
+            
+            <p>사용할 적립금 
+                <input type="text" name="pcredit" placeholder="입력해주세요.">원</p>
+                <button>전액사용</button>
+                
+
+
+            <h4>배송 주소</h4>
+        
+        <ul>
+            <li><input type="checkbox" name="addr[]" value="1">회원정보주소</li>
+            <li><input type="checkbox" name="addr[]" value="2">최근 배송지</li>
+        </ul>
+        <h4>주소록</h4>
+            <p><input type="text" name="address" placeholder="우편번호 입력"> <button onclick="find()">주소찾기</button></p>
+            <p><input type="text" name="daddress" placeholder="세부주소 입력"></p>
+        <br>
+
+        <P>배송 확인 전화번호</P>
             <input type="text" name="phone">
+
+        <h4>받는 분</h4>
+            <p>이름 <input type="text" name="rname"></p>
+            <p>휴대폰<input type="text" name="rphone"></p>
+        <br>
+        <h4>배송 요청사항</h4>
+            <textarea name="request" rows="5" cols="60"></textarea>
+            
+            
+      
+            <p>결제 가격:<dt name="price"><?=$price?></dt></p>
+     
+        
+        
         </div>
     </form>
-    <p>결제 가격:<?=$price?></p>
-    <a href="#" onclick="check()">결제완료</a>
+
+    <a href="#" onclick="check()">결제하러 가기</a>  
+    
 </body>
 
 </html>

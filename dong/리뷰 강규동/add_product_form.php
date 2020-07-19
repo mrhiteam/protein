@@ -43,6 +43,13 @@
           return;
       }
 
+      if (!document.product_form.status.value){
+          alert("상태를 추가하세요!");    
+          document.product_form.status.focus();
+          return;
+      }
+
+      
       document.product_form.submit();
    }
 
@@ -53,6 +60,8 @@
       document.product_form.last_day.value = "";
       document.product_form.image_file.value = "";
       document.product_form.info.value = "";
+      document.product_form.status.value = "";
+
       document.product_form.name.focus();
       return;
    }
@@ -112,6 +121,19 @@
 					<input type="file" name="info">
 		        </div>                 
             </div>
+            <div class="clear"></div>
+           <div class="form">
+            <div class="col1">제품 상태
+		        <div class="col2">
+                    <select name="status">
+                    <option value="매진">매진</option>
+                    <option value="판매 중">판매 중</option>
+                   
+                </select>
+		        </div>                 
+               </div>
+        </div>
+	       
 
 	       	<div class="buttons">
                 <a href="#" onclick="check_input()">추가하기</a>
