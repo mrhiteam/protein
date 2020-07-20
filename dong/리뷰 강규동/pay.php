@@ -17,7 +17,13 @@
     <?php 
     $acount = $_POST["acount"];
     $pcredit = $_POST["pcredit"];
+<<<<<<< HEAD
+   
+    $addresset = $_POST["addr"];
+
+=======
     $addrset = $_POST["addr[]"];
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
     $address = $_POST["address"];
     $daddress = $_POST["daddress"];
     $phone = $_POST["phone"];
@@ -64,11 +70,19 @@
                              
                 <tr>
                     <td>총 상품 금액</td>
+<<<<<<< HEAD
+                    <td align="right"><?=$_GET["price"]?>원</td>
+                </tr>
+                <tr>
+                    <td>총 배송비</td>
+                    <td align="right"><?=$_GET["sendfee"]?>원</td>
+=======
                     <td align="right"><?=$price?>원</td>
                 </tr>
                 <tr>
                     <td>총 배송비</td>
                     <td align="right"><?=$sendfee?>원</td>
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
                 </tr>
                 <tr>
                     <td>사용 적립금</td>
@@ -104,6 +118,10 @@
         <h3>주문 배송</h3>
         <div class="box inner__send">
         <h4>받는 주소</h4>
+<<<<<<< HEAD
+        <p><?=$addresset?>로 보냅니다.</p>
+=======
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
         <p><?=$address?>,<?=$daddress?></p>
 
         <h4>배송 요청사항</h4>
@@ -138,7 +156,7 @@
                 
                 <hr>
                 <h3>이용해주셔서 감사합니다!</h3>
-                <button><a href="index.php">홈으로 이동</a></button>
+                <button><a href="checkorder.php">주문 확인</a></button>
             </div>
         </div>
       </div> 

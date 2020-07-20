@@ -69,7 +69,7 @@
         <div>
             <h2> 주문확인</h2>
             <?php
-            $con = mysqli_connect("localhost", "project", "1234", "project");
+            $con = mysqli_connect("localhost", "dior909homme", "ngKan11gGu!", "dior909homme");
             $sql = "select * from orederlist where userid = '$userid' and status !='finish'";
             $result_order = mysqli_query($con,$sql);
             $result_ordercount = mysqli_num_rows($result_order);

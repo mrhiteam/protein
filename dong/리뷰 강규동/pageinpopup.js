@@ -16,9 +16,9 @@ function add_pick(a) {
     window.open("add_pick.php?num=" + a,"pick","left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
 }
 
-function order(a) {
+function order(a , b) {
         
-    window.open("order.php?price="+a+"&pcount="+ document.querySelector('#count').value+"&basket=0&pname="+document.querySelector('#oname').value,"order","left=700,top=300,width=700,height=500,scrollbars=no,resizable=yes");
+    window.open(`order.php?sendfee=${b}&price=${a}&pcount=${document.querySelector('#count').value}&basket=0&pname=${document.querySelector('#oname').value}`,"order","left=700,top=300,width=700,height=500,scrollbars=no,resizable=yes");
 }
 
 

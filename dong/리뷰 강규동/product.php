@@ -36,7 +36,7 @@
                         }
                         ?>
                         <div>
-                            <a href="itempagein.php?num=<?=$row['num']?>"><img src="image/<?= $row['image_file'] ?>"></a>
+                            <a href="itempagein.php?num=<?=$row['num']?>&name=<?=$row['name']?>"><img src="image/<?= $row['image_file'] ?>"></a>
                             <p>상품 이름:<?= $row['name'] ?></p>
                             <p>가격:<?= $row['price'] ?></p>
                         </div>    
@@ -53,7 +53,7 @@
                         }
                         ?>
                         <div>
-                            <a href="itempagein.php?num=<?=$row['num']?>"><img src="image/<?= $row['image_file'] ?>"></a>
+                            <a href="itempagein.php?num=<?=$row['num']?>&name=<?=$row['name']?>"><img src="image/<?= $row['image_file'] ?>"></a>
                             <p>상품 이름:<?= $row['name'] ?></p>
                             <p>가격:<?= $row['price'] ?></p>
                         </div>    
@@ -70,7 +70,7 @@
                         }
                         ?>
                         <div>
-                            <a href="itempagein.php?num=<?=$row['num']?>"><img src="image/<?= $row['image_file'] ?>"></a>
+                            <a href="itempagein.php?num=<?=$row['num']?>&name=<?=$row['name']?>"><img src="image/<?= $row['image_file'] ?>"></a>
                             <p>상품 이름:<?= $row['name'] ?></p>
                             <p>가격:<?= $row['price'] ?></p>
                         </div>    
@@ -87,7 +87,7 @@
                         }
                         ?>
                         <div>
-                            <a href="itempagein.php?num=<?=$row['num']?>"><img src="image/<?= $row['image_file'] ?>"></a>
+                            <a href="itempagein.php?num=<?=$row['num']?>&name=<?=$row['name']?>"><img src="image/<?= $row['image_file'] ?>"></a>
                             <p>상품 이름:<?= $row['name'] ?></p>
                             <p>가격:<?= $row['price'] ?></p>
                         </div>    
@@ -106,7 +106,7 @@
                 }
                 ?>
                 <div>
-                    <a href="itempagein.php?num=<?=$row['num']?>"><img src="image/<?= $row['image_file'] ?>"></a>
+                    <a href="itempagein.php?num=<?=$row['num']?>&name=<?=$row['name']?>"><img src="image/<?= $row['image_file'] ?>"></a>
                     <p>상품 이름:<?= $row['name'] ?></p>
                     <p>가격:<?= $row['price'] ?></p>
                 </div>    

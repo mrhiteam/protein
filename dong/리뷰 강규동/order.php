@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 <head>
-    <meta charset="utf-8">
-    <title></title>
+   
+    <title>주문하기</title>
 </head>
 <script>
     function check(){
@@ -36,13 +37,14 @@
     if($basket==0){
         $pname = $_GET["pname"];
         $pcount = $_GET["pcount"];
+       
         $price = $price*$pcount;
         $_SESSION['order_basket'] = $basket;
         $_SESSION['order_pname'] = $pname;
         $_SESSION['order_pcount'] = $pcount;
-    }
+       
 ?>
-    <form name="order_form" method="post" action="pay.php">
+    <form name="order_form" method="post" action="pay.php?pname=<?=$pname?>&price=<?=$price?>&pcount=<?=$pcount?>&sendfee=<?=$sendfee?>">
         <div>
            
             
@@ -57,9 +59,15 @@
 
             <h4>배송 주소</h4>
         
+<<<<<<< HEAD
+        <ul >
+            <li><input type="radio"  name="addr" value="회원정보주소" checked >회원정보주소</li>
+            <li><input type="radio" name="addr"value="최근 배송지" >최근 배송지</li>
+=======
         <ul>
             <li><input type="checkbox" name="addr[]" value="1">회원정보주소</li>
             <li><input type="checkbox" name="addr[]" value="2">최근 배송지</li>
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
         </ul>
         <h4>주소록</h4>
             <p><input type="text" name="address" placeholder="우편번호 입력"> <button onclick="find()">주소찾기</button></p>
@@ -78,7 +86,11 @@
             
             
       
+<<<<<<< HEAD
+            <p>결제 가격:<?=$price?></p>
+=======
             <p>결제 가격:<dt name="price"><?=$price?></dt></p>
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
      
         
         
