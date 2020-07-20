@@ -24,7 +24,16 @@ section {
 
 .pinfo__img {
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.pinfo__img>img {
+    
+    max-height: 500px; 
+}
+
 
 .pinfo__info {
     width: 50%;
@@ -52,7 +61,7 @@ section {
 }
 
 .tabs__link {
-    padding: 20px;
+    padding: 20px 40px;
 }
 
 .tabs__link.current {

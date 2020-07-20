@@ -25,7 +25,7 @@
 
 <body>
     <header>
-
+        <?php include "header.php";?>
     </header>
    
     <section>
@@ -75,14 +75,7 @@
             <div class="question">
                 
                 <div class="question__content">
-                    <div class="content__first">
-                        <div class="first__star">php</div>
-                        <div class="first__title">php</div>
-                        <div class="first__name">php</div>
-                    </div>
-                    <div class="content__second">
-                        php
-                    </div>
+                    <?php include "star.php";?>
                 </div>
                 <div class="aa question__search">
                 <form name="form1" method="POST" action="qsearch.php">

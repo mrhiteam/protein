@@ -12,7 +12,7 @@
         
     </header>
     <?php    
-   	$con = mysqli_connect("localhost", "project", "1234", "project");
+   	$con = mysqli_connect("localhost", "dior909homme", "ngKan11gGu!", "dior909homme");
     $sql    = "select * from members where id='$userid'";
     $result = mysqli_query($con, $sql);
     $row    = mysqli_fetch_array($result);
@@ -65,6 +65,7 @@
         
 	</section> 
 	<footer>
+        <?php include "footer.php";?>
     </footer>
 </body>
 </html>
