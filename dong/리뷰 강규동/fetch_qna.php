@@ -19,33 +19,53 @@ $result = $statement->fetchAll();
 $output = '';
 foreach($result as $row)
 {
+<<<<<<< HEAD
     if($_GET["pname"] == $row["comment_pname"]){
 
  $output .= '
  <div class="panel panel-default">
   <div class="panel-heading">  <mark>'.$row["comment_pname"].'</mark> <b>'.$row["comment_nick"].'</b>('.$row["comment_sender_name"].')님  <i>'.$row["date"].'</i></div>
+=======
+ $output .= '
+ <div class="panel panel-default">
+  <div class="panel-heading">'.$row["star_rate"].'  <b>'.$row["comment_sender_name"].'</b>님  <i>'.$row["date"].'</i></div>
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
   <div class="panel-body">'.$row["comment"].'</div>
   <div class="panel-footer" align="right"><button type="button" class="btn btn-default reply" id="'.$row["comment_id"].'">답글</button></div>
  </div>
  ';
+<<<<<<< HEAD
     }
+=======
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
  $output .= get_reply_comment($connect, $row["comment_id"]);
 }
 
 echo $output;
 
 
+<<<<<<< HEAD
 function get_reply_comment($connect, $parent_id2 = 0, $marginleft = 0)
 {
  $query = "
  SELECT * FROM qnacomment WHERE parent_comment_id = '".$parent_id2."'
+=======
+function get_reply_comment($connect, $parent_id = 0, $marginleft = 0)
+{
+ $query = "
+ SELECT * FROM qnacomment WHERE parent_comment_id = '".$parent_id."'
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
  ";
  $output = '';
  $statement = $connect->prepare($query);
  $statement->execute();
  $result = $statement->fetchAll();
  $count = $statement->rowCount();
+<<<<<<< HEAD
  if($parent_id2 == 0)
+=======
+ if($parent_id == 0)
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
  {
   $marginleft = 0;
  }
@@ -59,7 +79,11 @@ function get_reply_comment($connect, $parent_id2 = 0, $marginleft = 0)
   {
    $output .= '
    <div class="panel panel-default" style="margin-left:'.$marginleft.'px">
+<<<<<<< HEAD
     <div class="panel-heading"><b>'.$row["comment_nick"].'</b>('.$row["comment_sender_name"].')님의 답글 <i>'.$row["date"].'</i></div>
+=======
+    <div class="panel-heading"><b>'.$row["comment_sender_name"].'</b>님의 답글 <i>'.$row["date"].'</i></div>
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
     <div class="panel-body">'.$row["comment"].'</div>
     <div class="panel-footer" align="right"><button type="button" class="btn btn-default reply" id="'.$row["comment_id"].'">답글</button></div>
    </div>

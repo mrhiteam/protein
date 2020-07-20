@@ -27,6 +27,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
 }
 
 .pinfo__img>img {
@@ -34,6 +35,15 @@ section {
     max-height: 500px; 
 }
 
+=======
+}
+
+.pinfo__img>img {
+    
+    max-height: 500px; 
+}
+
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
 
 .pinfo__info {
     width: 50%;
@@ -130,3 +140,8 @@ section {
     margin: 10px;
     font-weight: bold;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942

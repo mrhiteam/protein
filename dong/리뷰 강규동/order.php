@@ -59,9 +59,15 @@
 
             <h4>배송 주소</h4>
         
+<<<<<<< HEAD
         <ul >
             <li><input type="radio"  name="addr" value="회원정보주소" checked >회원정보주소</li>
             <li><input type="radio" name="addr"value="최근 배송지" >최근 배송지</li>
+=======
+        <ul>
+            <li><input type="checkbox" name="addr[]" value="1">회원정보주소</li>
+            <li><input type="checkbox" name="addr[]" value="2">최근 배송지</li>
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
         </ul>
         <h4>주소록</h4>
             <p><input type="text" name="address" placeholder="우편번호 입력"> <button onclick="find()">주소찾기</button></p>
@@ -80,7 +86,11 @@
             
             
       
+<<<<<<< HEAD
             <p>결제 가격:<?=$price?></p>
+=======
+            <p>결제 가격:<dt name="price"><?=$price?></dt></p>
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
      
         
         

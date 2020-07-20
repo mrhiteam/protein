@@ -23,15 +23,23 @@
          $sql = "select * from product where num = $num";
          $result = mysqli_query($con, $sql);
          $row = mysqli_fetch_array($result);
+<<<<<<< HEAD
          $pname = $row['name'];
          $price = $row['price'];
 
          if ($name = "시미켄") {
+=======
+         $name = $row['name'];
+         $price = $row['price'];
+
+         if ($name = "%시미켄%") {
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
              $event = "구매 시 시미켄파티 무료권을 드립니다!";
          } else {
              $event = "해당 물품 행사 내용이 없습니다..";
          }
 
+<<<<<<< HEAD
          if ($price >= 30000) {
              $sendfee = 0;
          } else {
@@ -39,6 +47,13 @@
          }
 
          
+=======
+         if ($price <= 20000) {
+             $sendfee = "무료";
+         } else {
+             $sendfee = "2500원";
+         }
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
          mysqli_close($con);
          ?>
         <div class="pinfo">
@@ -54,7 +69,11 @@
                 </div>                
                 <div class="box info__status">
                     <p><?=$row['status']?></p>
+<<<<<<< HEAD
                     <p>배송비 <?=$sendfee?>원</p>
+=======
+                    <p>배송비 <?=$sendfee?></p>
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
                     <p>벨지안 블루</p>
                     <button onclick="muiza()">무이자 할부 정보</button>
                   
@@ -94,11 +113,21 @@
                 <img src="image/<?=$row['info']?>"<??>
             </div>
             <div id="tab-2" class="tabs__content">
+<<<<<<< HEAD
         
                 <div class="question__content">
                    <?php include 'star.php';
                    
                    ?>
+=======
+                <div class="question__flex1">
+                    <div class="flex1__write">
+                        <button onclick = "star()">리뷰 작성하기</button>
+                    </div>
+                </div>
+                <div class="question__content">
+                   <?php include 'starlist.php'?>
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
                 </div>
                 <div class="aa question__search">
                 <form name="form1" method="POST" action="qsearch.php">
@@ -113,9 +142,19 @@
                 </div>
             </div>
             <div id="tab-3" class="tabs__content">
+<<<<<<< HEAD
                
                 <div class="question__content">
                <?php include 'qna.php'?>
+=======
+                <div class="question__flex1">
+                    <div class="flex1__write">
+                        <button onclick = "qna()">문의 작성하기</button>
+                    </div>
+                </div>
+                <div class="question__content">
+                   
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
                 </div>
                 <div class="aa question__search">
                 <form name="form1" method="POST" action="qsearch.php">

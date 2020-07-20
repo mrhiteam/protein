@@ -75,7 +75,11 @@
             <div class="question">
                 
                 <div class="question__content">
+<<<<<<< HEAD
                     <?php include "star.php";?>
+=======
+                    <?php include "starlist.php";?>
+>>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
                 </div>
                 <div class="aa question__search">
                 <form name="form1" method="POST" action="qsearch.php">

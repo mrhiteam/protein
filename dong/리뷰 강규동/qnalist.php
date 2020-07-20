@@ -5,22 +5,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
  
 <style>
-<<<<<<< HEAD
-
-.panel.panel-default {
-    margin-top: 20px;
-}
-
-.panel-body {
-  margin-top : 10px;
-}
-
-</style>
-</head>
- <body>
-  
-=======
-  header, #display_comment {
+  header, form{
     display:none; /*병신아  왜 자꾸 hidden해가지고 지랄이야*/
   }
 </style> 
@@ -29,43 +14,20 @@
    <header>
    <?php include "header.php"?>
    </header>
->>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
   <br />
-  <h2 align="center">리뷰 작성해주세요!</h2>
+  
   <br />
   <div class="container">
    <form method="POST" id="comment_form">
+   
    <div class="form-group">
-    <select name="star_rate" id="star-rate" class="form-control">
-        <option>⭐</option>
-        <option>⭐⭐</option>
-        <option>⭐⭐⭐</option>
-        <option>⭐⭐⭐⭐</option>
-        <option>⭐⭐⭐⭐⭐</option>
-    </select>
-    </div> 
-   <div class="form-group">
-<<<<<<< HEAD
-     <input type="text" name="comment_name" id="comment_name" class="form-control" value="<?=$_SESSION["userid"]?>" style="border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" readonly />
-   </div>
-     <div class="form-group">
-     <input type="text" name="comment_nick" id="comment_nick" class="form-control" value="<?=$_SESSION["username"]?>" style="border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" readonly />
-     </div>
-     <div class="form-group">
-     <input type="text" name="comment_pname" id="comment_pname" class="form-control" value="<?=$pname?>" style="border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" readonly />
-=======
      <input type="text" name="comment_name" id="comment_name" class="form-control" placeholder="이름" />
->>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
     </div>
     <div class="form-group">
      <textarea name="comment_content" id="comment_content" class="form-control" placeholder="내용" rows="5"></textarea>
     </div>
     <div class="form-group">
      <input type="hidden" name="comment_id" id="comment_id" value="0" />
-<<<<<<< HEAD
-     <input type="hidden" name="comment_pid" id="comment_pid" value="<?=$_GET["num"]?>" />
-=======
->>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
      <input type="submit" name="submit" id="submit" class="btn btn-info" value="남기기" />
     </div>
    </form>
@@ -83,7 +45,7 @@ $(document).ready(function(){
   event.preventDefault();
   var form_data = $(this).serialize();
   $.ajax({
-   url:"add_comment.php",
+   url:"add_qna.php",
    method:"POST",
    data:form_data,
    dataType:"JSON",
@@ -105,11 +67,7 @@ $(document).ready(function(){
  function load_comment()
  {
   $.ajax({
-<<<<<<< HEAD
-   url:"fetch_comment.php?pname=<?=$pname?>",
-=======
-   url:"fetch_comment.php",
->>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
+   url:"fetch_qna.php",
    method:"POST",
    success:function(data)
    {
