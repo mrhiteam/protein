@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery.js"></script>
+        <script src="https://kit.fontawesome.com/367c26cb8d.js" crossorigin="anonymous"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+            rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+        <link rel="stylesheet" href="css/header-footer.css?after">
+        <title></title>
+        <style></style>
+        <script>
+
+            window.addEventListener('scroll', function () {
+                var scrollPos = window.scrollY || window.scrollTop || document
+                    .getElementsByTagName(
+                        "html"
+                    )[0]
+                    .scrollTop;
+
+                console.log(scrollPos);
+                if (scrollPos >= 300) {
+                    document
+                        .querySelector("#hidden_nav")
+                        .style
+                        .display = 'block';
+                } else {
+                    document
+                        .querySelector("#hidden_nav")
+                        .style
+                        .display = 'none';
+                }
+            });
+            /*
+            function checkscroll(){
+                var scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+                document.querySelector('#check').innerHTML=scrollPos;
+                if(scrollPos>=300){
+                    document.querySelector("#hidden_nav").style.display= 'block';
+                }
+                else{
+                    document.querySelector("#hidden_nav").style.display= 'none';
+                }
+            }*/
+            //로그인 모달 기능구현 시작
+            function membershipon() {
+                document
+                    .querySelector("#membership")
+                    .style
+                    .display = "block";
+            }
+            function membershipoff() {
+                document
+                    .querySelector("#membership")
+                    .style
+                    .display = "none";
+            } //로그인 모달 기능구현 끝
+            //카테고리 꾸미기
+            var catedeco1 = 1;
+            function catedeco() {
+                if (catedeco1 == 1) {
+                    document
+                        .querySelector(".catedeco1")
+                        .style
+                        .color = "#fff";
+                    document
+                        .querySelector(".catedeco1")
+                        .style
+                        .backgroundColor = "#5763e6";
+                    document
+                        .querySelector(".catedeco1")
+                        .style
+                        .textShadow = "0 0 3px black";
+                    catedeco1 = 0;
+                } else {
+                    document
+                        .querySelector(".catedeco1")
+                        .style
+                        .color = "black";
+                    document
+                        .querySelector(".catedeco1")
+                        .style
+                        .textShadow = "none";
+                    document
+                        .querySelector(".catedeco1")
+                        .style
+                        .backgroundColor = "#fff";
+                    catedeco1 = 1;
+                }
+            }
+
+            var catedeco21 = 1;
+            function catedeco2() {
+                if (catedeco21 == 1) {
+                    document
+                        .querySelector(".catedeco2")
+                        .style
+                        .color = "#fff";
+                    document
+                        .querySelector(".catedeco2")
+                        .style
+                        .backgroundColor = "#5763e6";
+                    document
+                        .querySelector(".catedeco2")
+                        .style
+                        .textShadow = "0 0 3px black";
+                    catedeco21 = 0;
+                } else {
+                    document
+                        .querySelector(".catedeco2")
+                        .style
+                        .color = "black";
+                    document
+                        .querySelector(".catedeco2")
+                        .style
+                        .textShadow = "none";
+                    document
+                        .querySelector(".catedeco2")
+                        .style
+                        .backgroundColor = "#fff";
+                    catedeco21 = 1;
+                }
+            } //카테고리 꾸미기 끝
+            //카테고리 기능구현 시작
+            $(document).ready(function () {
+                $("#category").click(function () {
+                    $(".cate").slideToggle(300);
+                });
+            });
+            var cateonoff1 = 1;
+            var cateonoff2 = 1;
+            var cateonoff3 = 1;
+            var cateonoff4 = 1;
+            function catebtn(a) {
+                if (a == 1) {
+                    if (cateonoff1 == 1) {
+                        document
+                            .querySelector(".cate-1")
+                            .style
+                            .display = "block";
+                        document
+                            .querySelector(".cate-2")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-3")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-4")
+                            .style
+                            .display = "none";
+                        cateonoff1 = 0;
+                        cateonoff2 = 1;
+                        cateonoff3 = 1;
+                        cateonoff4 = 1;
+                    } else {
+                        document
+                            .querySelector(".cate-1")
+                            .style
+                            .display = "none";
+                        cateonoff1 = 1;
+                    }
+                } else if (a == 2) {
+                    if (cateonoff2 == 1) {
+                        document
+                            .querySelector(".cate-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-2")
+                            .style
+                            .display = "block";
+                        document
+                            .querySelector(".cate-3")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-4")
+                            .style
+                            .display = "none";
+                        cateonoff1 = 1;
+                        cateonoff2 = 0;
+                        cateonoff3 = 1;
+                        cateonoff4 = 1;
+                    } else {
+                        document
+                            .querySelector(".cate-2")
+                            .style
+                            .display = "none";
+                        cateonoff2 = 1;
+                    }
+                } else if (a == 3) {
+                    if (cateonoff3 == 1) {
+                        document
+                            .querySelector(".cate-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-2")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-3")
+                            .style
+                            .display = "block";
+                        document
+                            .querySelector(".cate-4")
+                            .style
+                            .display = "none";
+                        cateonoff1 = 1;
+                        cateonoff2 = 1;
+                        cateonoff3 = 0;
+                        cateonoff4 = 1;
+                    } else {
+                        document
+                            .querySelector(".cate-3")
+                            .style
+                            .display = "none";
+                        cateonoff3 = 1;
+                    }
+                } else if (a == 4) {
+                    if (cateonoff4 == 1) {
+                        document
+                            .querySelector(".cate-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-2")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-3")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-4")
+                            .style
+                            .display = "block";
+                        cateonoff1 = 1;
+                        cateonoff2 = 1;
+                        cateonoff3 = 1;
+                        cateonoff4 = 0;
+                    } else {
+                        document
+                            .querySelector(".cate-4")
+                            .style
+                            .display = "none";
+                        cateonoff4 = 1;
+                    }
+                }
+            } //카테고리 기능구현 끝
+
+            //카테고리 상단고정 기능구현 시작 카테고리 상단고정 기능구현 끝
+            $(document).ready(function () {
+                $("#category1").click(function () {
+                    $(".cate1").slideToggle(300);
+                });
+            });
+            var cateonoff11 = 1;
+            var cateonoff21 = 1;
+            var cateonoff31 = 1;
+            var cateonoff41 = 1;
+            function catebtn1(a) {
+                if (a == 1) {
+                    if (cateonoff11 == 1) {
+                        document
+                            .querySelector(".cate-1-1")
+                            .style
+                            .display = "block";
+                        document
+                            .querySelector(".cate-2-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-3-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-4-1")
+                            .style
+                            .display = "none";
+                        cateonoff11 = 0;
+                        cateonoff21 = 1;
+                        cateonoff31 = 1;
+                        cateonoff41 = 1;
+                    } else {
+                        document
+                            .querySelector(".cate-1-1")
+                            .style
+                            .display = "none";
+                        cateonoff11 = 1;
+                    }
+                } else if (a == 2) {
+                    if (cateonoff21 == 1) {
+                        document
+                            .querySelector(".cate-1-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-2-1")
+                            .style
+                            .display = "block";
+                        document
+                            .querySelector(".cate-3-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-4-1")
+                            .style
+                            .display = "none";
+                        cateonoff11 = 1;
+                        cateonoff21 = 0;
+                        cateonoff31 = 1;
+                        cateonoff41 = 1;
+                    } else {
+                        document
+                            .querySelector(".cate-2-1")
+                            .style
+                            .display = "none";
+                        cateonoff21 = 1;
+                    }
+                } else if (a == 3) {
+                    if (cateonoff31 == 1) {
+                        document
+                            .querySelector(".cate-1-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-2-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-3-1")
+                            .style
+                            .display = "block";
+                        document
+                            .querySelector(".cate-4-1")
+                            .style
+                            .display = "none";
+                        cateonoff11 = 1;
+                        cateonoff21 = 1;
+                        cateonoff31 = 0;
+                        cateonoff41 = 1;
+                    } else {
+                        document
+                            .querySelector(".cate-3-1")
+                            .style
+                            .display = "none";
+                        cateonoff31 = 1;
+                    }
+                } else if (a == 4) {
+                    if (cateonoff41 == 1) {
+                        document
+                            .querySelector(".cate-1-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-2-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-3-1")
+                            .style
+                            .display = "none";
+                        document
+                            .querySelector(".cate-4-1")
+                            .style
+                            .display = "block";
+                        cateonoff11 = 1;
+                        cateonoff21 = 1;
+                        cateonoff31 = 1;
+                        cateonoff41 = 0;
+                    } else {
+                        document
+                            .querySelector(".cate-4-1")
+                            .style
+                            .display = "none";
+                        cateonoff41 = 1;
+                    }
+                }
+            }
+            //상단 광고 제거
+            function topoff(){
+                document.querySelector("#top").style.display="none";
+            }//상단광고 제거 끝
+        </script>
+        
+    </head>
+    <body>
+        <div id="top">
+            <span class="topoff" onclick="topoff()">✖</span>
+            <a href="#">
+                <div class="inner"><img src="image/top.png"></div>
+            </a>
+        </div>
+
+        <header>
+            <div class="inner">
+                <ul>
+                    <li>
+                        <a href="#" id="open">로그인</a>
+
+                        <div class="modal hidden">
+                            <div class="modal__overlay"></div>
+                            <!-- 모달 회색배경 -->
+                            <div class="bigmodal">
+                                <div class="modal__content">
+                                    <button>✖</button>
+                                    <p>로그인</p>
+                                    <form name="login_form" method="post" action="login.php">
+                                        <ul>
+                                            <li><input type="text" name="id" placeholder="아이디"></li>
+                                            <li><input type="password" id="pass" name="pass" placeholder="비밀번호"></li>
+                                            <!-- pass -->
+                                        </ul>
+                                        <div id="login_btn">
+                                            <a href="#" onclick="check_input()">로그인</a>
+                                        </div>
+                                    </form>
+                                    <div class="login_join">
+                                        <ul>
+                                            <li>
+                                                <a href="#">회원가입</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" onclick="membershipon()">회원 혜택 알아보기 ></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div id="membership">
+                                    <a href="#" class="membershipoff" onclick="membershipoff()">✖</a>
+                                    <p>멤버십 혜택</p>
+                                    <table>
+                                        <tr>
+                                            <th>벨지안 블루
+                                                <br>
+                                                <sup>50만원 이상</sup>
+                                            </th>
+                                            <td>적립금</td>
+                                            <td>생일쿠폰</td>
+                                            <td>무료반품</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <td>5%</td>
+                                            <td>20%할인쿠폰<br>2장</td>
+                                            <td>월2회<br>무료반품</td>
+
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <th>헬창<br>
+                                                <sup>20만원 이상</sup>
+                                            </th>
+                                            <td>적립금</td>
+                                            <td>생일쿠폰</td>
+                                            <td>무료반품</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <td>3%</td>
+                                            <td>20%할인쿠폰<br>1장</td>
+                                            <td>월1회<br>무료반품</td>
+
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <th>헬린이<br>
+                                                <sup>기본</sup>
+                                            </th>
+                                            <td>적립금</td>
+                                            <td>생일쿠폰</td>
+                                            <td>무료반품</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <td>2%</td>
+                                            <td>10%할인쿠폰<br>1장</td>
+                                            <td>없음</td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="mypage-orderChk.html">주문/배송조회</a>
+                    </li>
+                    <li>
+                        <a href="customercenter.html">고객센터</a>
+                    </li>
+                    <li>
+                        <a href="join.html">회원가입</a>
+                    </li>
+                </ul>
+                <div id="logo">
+                    <a href="mainpage"><img src="image/logo4.png" alt="logo"></a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="mypage-basket.html">
+                            <i class="xi-cart">장바구니</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mypage.html">
+                            <i class="xi-home">마이페이지</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <nav>
+                <div class="inner">
+                    <a href="#" id="category">
+                        <i class="xi-list catedeco1" onclick="catedeco()">
+                            카테고리</i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="newitem.html">신상품</a>
+                        </li>
+                        <li>
+                            <a href="bestitem.html">인기상품</a>
+                        </li>
+                        <li>
+                            <a href="tippage.html">건강 꿀 팁!</a>
+                        </li>
+                        <li>
+                            <a href="event.html">이벤트</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="cate">
+                    <div class="inner">
+                        <li>
+                            <a href="#" onmouseover="catebtn(1)">쉐이크/보조제</a>
+                            <ul class="cate-1">
+                                <li>
+                                    <a href="#">전체</a>
+                                </li>
+                                <li>
+                                    <a href="#">단백질 쉐이크</a>
+                                </li>
+                                <li>
+                                    <a href="#">웨이트 보조제</a>
+                                </li>
+                                <li>
+                                    <a href="#">체중 조절</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onmouseover="catebtn(2)">스포츠웨어</a>
+                            <ul class="cate-2">
+                                <li>
+                                    <a href="#">전체</a>
+                                </li>
+                                <li>
+                                    <a href="#">MAN</a>
+                                </li>
+                                <li>
+                                    <a href="#">WOMAN</a>
+                                </li>
+                                <li>
+                                    <a href="#">SHOSE</a>
+                                </li>
+                                <li>
+                                    <a href="#">CAP</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onmouseover="catebtn(3)">헬스 용품</a>
+                            <ul class="cate-3">
+                                <li>
+                                    <a href="#">전체</a>
+                                </li>
+                                <li>
+                                    <a href="#">덤벨/바벨/케틀벨</a>
+                                </li>
+                                <li>
+                                    <a href="#">스트랩/랩/벨트</a>
+                                </li>
+                                <li>
+                                    <a href="#">탄력봉</a>
+                                </li>
+                                <li>
+                                    <a href="#">기타</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onmouseover="catebtn(4)">웨이트 식품</a>
+                            <ul class="cate-4">
+                                <li>
+                                    <a href="#">전체</a>
+                                </li>
+                                <li>
+                                    <a href="#">닭가슴살</a>
+                                </li>
+                                <li>
+                                    <a href="#">다이어트 도시락</a>
+                                </li>
+                                <li>
+                                    <a href="#">세트</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+            <nav id="hidden_nav">
+                <div class="inner">
+                    <a id="category1">
+                        <i class="xi-list catedeco2" onclick="catedeco2()">
+                            카테고리</i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="newitem.html">신상품</a>
+                        </li>
+                        <li>
+                            <a href="bestitem.html">인기상품</a>
+                        </li>
+                        <li>
+                            <a href="tippage.html">건강 꿀 팁!</a>
+                        </li>
+                        <li>
+                            <a href="event.html">이벤트</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="cate1">
+                    <div class="inner">
+                        <li>
+                            <a href="#" onmouseover="catebtn1(1)">쉐이크/보조제</a>
+                            <ul class="cate-1-1">
+                                <li>
+                                    <a href="#">전체</a>
+                                </li>
+                                <li>
+                                    <a href="#">단백질 쉐이크</a>
+                                </li>
+                                <li>
+                                    <a href="#">웨이트 보조제</a>
+                                </li>
+                                <li>
+                                    <a href="#">체중 조절</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onmouseover="catebtn1(2)">스포츠웨어</a>
+                            <ul class="cate-2-1">
+                                <li>
+                                    <a href="#">MAN</a>
+                                </li>
+                                <li>
+                                    <a href="#">WOMAN</a>
+                                </li>
+                                <li>
+                                    <a href="#">SHOSE</a>
+                                </li>
+                                <li>
+                                    <a href="#">CAP</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onmouseover="catebtn1(3)">헬스 용품</a>
+                            <ul class="cate-3-1">
+                                <li>
+                                    <a href="#">덤벨/바벨/케틀벨</a>
+                                </li>
+                                <li>
+                                    <a href="#">스트랩/랩/벨트</a>
+                                </li>
+                                <li>
+                                    <a href="#">탄력봉</a>
+                                </li>
+                                <li>
+                                    <a href="#">기타</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onmouseover="catebtn1(4)">웨이트 식품</a>
+                            <ul class="cate-4-1">
+                                <li>
+                                    <a href="#">전체</a>
+                                </li>
+                                <li>
+                                    <a href="#">닭가슴살</a>
+                                </li>
+                                <li>
+                                    <a href="#">다이어트 도시락</a>
+                                </li>
+                                <li>
+                                    <a href="#">세트</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+
+        </header>
+        <section>
+            <article>
+                <p id="check"></p>
+            </article>
+        </section>
+        <footer>
+            <nav>
+                <div class="inner">
+                    <ul id="footmenu">
+                        <li>
+                            <a href="">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="">개인정보 처리방침</a>
+                        </li>
+                        <li>
+                            <a href="">고객센터</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+            <div class="inner">
+                <div id="info">
+                    <p>(주)벨지안블루 | 대표이사:송민석, 서울시 성동구 왕십리로 303 4층
+                        <br>통신판매업신고번호:제2020-서울왕십리-2222 | 개인정보보호책임자:강규동
+                        <br>호스팅제공자:(주)벨지안블루 | belgianmail@belgian.co.kr
+                        <br>고객상담:1544-1234(쇼핑몰) | 070-022-2222(제품 및 매장 외)
+                        <br>
+                        <sub>© BELGIAN CORPORATION. ALL RIGHTS RESERVED.</sub>
+                    </p>
+                </div>
+
+                <a href="mainpage.html" id="footlogo"><img
+                    src="image/logo5.png"
+                    alt="logo"
+                    onmouseover="this.src='image/logo6.png'"
+                    onmouseout="this.src='image/logo5.png'"></a>
+
+            </div>
+        </footer>
+        <script>
+            const openButton = document.querySelector("#open");
+
+            const modal = document.querySelector(".modal");
+
+            const closeButton = modal.querySelector("button");
+            const openModal = function () {
+                modal
+                    .classList
+                    .remove("hidden");
+            };
+            const closeModal = function () {
+                modal
+                    .classList
+                    .add("hidden");
+            };
+
+            closeButton.addEventListener("click", closeModal);
+            openButton.addEventListener("click", openModal);
+        </script>
+
+    </body>
+
+</html>
