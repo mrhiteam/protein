@@ -3,11 +3,7 @@
  <head>
   <title>문의 작성</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
- <style>
-    form {
-     display: none;
-   }
- </style>
+ 
 </head>
  <body>
  
@@ -21,7 +17,9 @@
      <div class="form-group">
      <input type="text" name="comment_nick2" id="comment_nick2" class="form-control" value="<?=$_SESSION["username"]?>" style="border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" readonly />
      </div>
-     
+     <div class="form-group">
+     <input type="text" name="comment_pname2" id="comment_pname2" class="form-control" value="고객센터" style="border:none;border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;" readonly />
+    </div> 
    
     <div class="form-group">
      <textarea name="comment_content2" id="comment_content2" class="form-control" placeholder="내용" rows="5"></textarea>
@@ -67,7 +65,7 @@ $(document).ready(function(){
  function load_comment()
  {
   $.ajax({
-   url:"fetch_qna2.php?userid=<?=$_SESSION["userid"]?>",
+   url:"fetch_qna3.php",
    method:"POST",
    success:function(data)
    {

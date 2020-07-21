@@ -7,7 +7,7 @@
     <title>My page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <link rel="stylesheet" type='text/css' media='screen' href="mypr.css">
+    <link rel="stylesheet" type='text/css' media='screen' href="mypr.css?after">
 
     <script>
         $(document).ready(function() {
@@ -71,15 +71,11 @@
             </nav>
             <!-- 섹션 상단쪽 자기정보 -->
             <article>
-                  <h2> 내가 쓴 별점 리뷰</h2>
+                  <h3> 내가 쓴 별점 리뷰</h3>
             <div class="question">
                 
                 <div class="question__content">
-<<<<<<< HEAD
-                    <?php include "star.php";?>
-=======
-                    <?php include "starlist.php";?>
->>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
+                    <?php include "star2.php";?>
                 </div>
                 <div class="aa question__search">
                 <form name="form1" method="POST" action="qsearch.php">

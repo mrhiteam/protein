@@ -1,0 +1,110 @@
+@import 'reset.css';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap';
+
+
+
+#container {
+    width: 100%;
+    height: 100%;
+    font-family: 'Noto Sans KR',sans-serif;
+}
+
+
+section {
+        margin: 0 auto;
+        width: 1024px; 
+        height: 100%;
+        padding: 10px;
+        background-color: azure;
+        }
+
+section>h2 {
+            margin-bottom: 50px;
+            font-size: 2em;
+        }
+
+.question__flex1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* direction으로 먼저 설정하고 justify-content를 실행한다*/
+}
+
+.flex1__write {
+    background-color: white;
+    padding: 10px 20px;
+    
+}
+
+.flex1__write>a {
+    text-decoration: none;
+    color: black;
+}
+
+.content__first {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.content__second {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.aa {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.question__list {
+    padding: 10px;
+}
+
+.question__list>a {
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.flex2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.flex2__notice {
+    width: 49%;
+}
+
+.flex2__call {
+    width: 49%;
+}
+
+.call__content {
+    background-color: white;
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+.call__content>h1 {
+    font-size: 7em;
+}
+
+.num {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.call__content>p {
+    line-height: 1.5em;
+}

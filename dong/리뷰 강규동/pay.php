@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>벨지안 블루</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='p.css?after'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/p.css?after'>
     
 </head>
 <body>
@@ -16,22 +16,73 @@
      <section>
     <?php 
     $acount = $_POST["acount"];
+    $price = $_GET["price"];
     $pcredit = $_POST["pcredit"];
-<<<<<<< HEAD
-   
     $addresset = $_POST["addr"];
-
-=======
-    $addrset = $_POST["addr[]"];
->>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
+    $sendfee = $_GET["sendfee"];
     $address = $_POST["address"];
     $daddress = $_POST["daddress"];
     $phone = $_POST["phone"];
     $rname = $_POST["rname"];
     $rphone = $_POST["rphone"];
-    $request = $_POST["request"]
-    
+    $request = $_POST["request"];
+    $total = $price + $sendfee - $_SESSION["userpoint"];
    
+    $basket = $_SESSION['order_basket'];
+$price = $_SESSION['order_price'];
+$regist_day = date("Y-m-d (H:i)");
+$acount = $_POST['acount'];
+$addr = $_POST['addr'];
+$phone = $_POST['phone'];
+
+    if (isset($_SESSION["userid"])) {
+        $userid = $_SESSION["userid"];
+        if (isset($_SESSION["userpoint"])){
+            $userpoint = $_SESSION["userpoint"];
+            $userpoint = $userpoint + ($price*0.01);
+            $con = mysqli_connect("localhost", "dior909homme", "ngKan11gGu!", "dior909homme");
+            $sql = "update members set point = $userpoint where id = '$userid'";
+            mysqli_query($con,$sql);
+            $_SESSION["userpoint"] = $userpoint;
+            $userid = $_SESSION["userid"];
+            $useremail = $_SESSION["useremail"];
+            
+
+            if($basket==0){
+                $pname = $_SESSION['order_pname'];
+                $pcount = $_SESSION['order_pcount'];
+                $sql = "select * from product where name = '$pname'";
+                $result_p = mysqli_query($con,$sql);
+                $p_result = mysqli_fetch_row($result_p);
+                $sql = "insert into orederlist values('','$p_result[1]', '$p_result[0]', '$p_result[3]', '$pcount', '$phone', '$regist_day', '$p_result[6]', '$address' ,'$userid' ,'$useremail','ready')";
+                mysqli_query($con,$sql);
+                mysqli_close($con);
+            }
+            else if($basket==1){
+                for($i=1;$i<20;$i++){
+                    if(isset($_SESSION["product'$i'"])){
+                        $pname = $_SESSION["product'$i'"];
+                        $price = $_SESSION["product'$i'price"];
+                        $pcount = $_SESSION["product'$i'count"];
+                        $sql = "select * from product where name = '$pname'";
+                        $result_p = mysqli_query($con,$sql);
+                        $p_result = mysqli_fetch_row($result_p);
+                        $sql = "insert into orederlist values('','$p_result[1]', '$p_result[0]', '$p_result[3]', '$pcount', '$phone', '$regist_day', '$p_result[6]', '$address' ,'$userid' ,'$useremail','ready')";
+                        mysqli_query($con,$sql);
+                    }
+                }
+                mysqli_close($con);
+                for($i=1;$i<20;$i++){
+                    unset($_SESSION["product'$i'"]);
+                    unset($_SESSION["product'$i'count"]);
+                    unset($_SESSION["product'$i'price"]);
+                    unset($_SESSION["price"]);
+                  }
+            }
+        }
+        
+    }
+    
 
     ?>
 
@@ -46,7 +97,7 @@
         <tr align="center" class="info__line">
             <td width="55%">주문상품</td>
             <td width="15%">수량</td>
-            <td width="15%">총 상품 금액</td>
+            <td width="15%">상품 금액</td>
             <td width="15%">적립금</td>
         </tr>
         <tr>
@@ -70,19 +121,11 @@
                              
                 <tr>
                     <td>총 상품 금액</td>
-<<<<<<< HEAD
                     <td align="right"><?=$_GET["price"]?>원</td>
                 </tr>
                 <tr>
                     <td>총 배송비</td>
                     <td align="right"><?=$_GET["sendfee"]?>원</td>
-=======
-                    <td align="right"><?=$price?>원</td>
-                </tr>
-                <tr>
-                    <td>총 배송비</td>
-                    <td align="right"><?=$sendfee?>원</td>
->>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
                 </tr>
                 <tr>
                     <td>사용 적립금</td>
@@ -98,7 +141,7 @@
                 </tr>
                 <tr>
                     <td>총 결제금액</td>
-                    <td align="right"><?=$total?></td>
+                    <td align="right"><?=$total?>원</td>
                 </tr>
             </table>
             </div>
@@ -118,10 +161,7 @@
         <h3>주문 배송</h3>
         <div class="box inner__send">
         <h4>받는 주소</h4>
-<<<<<<< HEAD
         <p><?=$addresset?>로 보냅니다.</p>
-=======
->>>>>>> f35a68d35cf0307c189f1e8c88bac15c6c282942
         <p><?=$address?>,<?=$daddress?></p>
 
         <h4>배송 요청사항</h4>
@@ -134,16 +174,17 @@
         <div class="finish__one">
             <h4>결제수단</h4>
             <ul>
-                <li><button>무통장입금</button></li>
-                <li><button>실시간 이체</button></li>
-                <li><button>신용카드</button></li>
+                <li><button onclick="mu()">무통장입금</button></li>
+                <li><button onclick="sil()">실시간 이체</button></li>
+                <li><button onclick="sin()">신용카드</button></li>
             </ul>
+            <p id="one__message"></p>
         </div>
         <div class="finish__two">
             <table>
                 <tr>
                     <td><h3>최종 결제 금액</h3></td>
-                    <td align="right">php원</td>
+                    <td align="right"><?=$total?>원</td>
                 </tr>
             </table>
         </div>   
@@ -156,7 +197,7 @@
                 
                 <hr>
                 <h3>이용해주셔서 감사합니다!</h3>
-                <button><a href="checkorder.php">주문 확인</a></button>
+                <button><a href="checkorder.php?">주문 확인</a></button>
             </div>
         </div>
       </div> 
@@ -167,5 +208,21 @@
     </div>
    
 </body>
+<script>
+   function mu() {
+    document.getElementById("one__message").innerHTML = "무통장입금으로 결제합니다!";
+    window.open("mutong.php","mutong","left=200,top=200,width=373,height=300,scrollbars=no,resizable=yes");
+   }
+
+   function sil() {
+       document.getElementById("one__message").innerHTML = "실시간이체로 결제합니다!";
+       window.open("sil.php","sil","left=200,top=200,width=335,height=487,scrollbars=no,resizable=yes");
+   }
+
+   function sin() {
+    document.getElementById("one__message").innerHTML = "신용카드로 결제합니다!";
+    window.open("sin.php","sin","left=200,top=200,width=645,height=645,scrollbars=no,resizable=yes");
+   }
+</script>
 <script src="pay.js"></script>
 </html>
