@@ -1,0 +1,225 @@
+@import 'reset.css';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap';
+
+
+
+#container {
+    width: 100%;
+    height: 100%;
+    font-family: 'Noto Sans KR',sans-serif;}
+
+.gray {
+    background:  rgba(0, 0, 0, 0.19);
+}
+
+section {
+    margin: 0 auto;
+    width: 1024px; 
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    
+    }
+
+section>h2 {
+    margin-bottom: 50px;
+    font-size: 1.8em;
+    margin-top: 40px;
+}
+
+.section__inner>h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.box{
+    background-color: aliceblue;
+    width: 96%;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 2em;
+    margin-bottom: 50px;
+}
+
+.inner__info table {
+    width: 100%;
+    
+}
+
+.inner__info table td {
+    padding: 10px;
+}
+
+.info__line {
+    font-weight: bold;
+    border-bottom: 2px solid #E5E5E5;
+}
+
+
+
+
+.inner__finalpay {
+
+    display: flex;
+    flex-direction: row;
+   
+    
+}
+
+.finalpay__one {
+    width: 50%;
+}
+
+.finalpay__two {
+    width: 40%;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.two__board {
+    width: 100%;
+    padding: 20px;
+   
+}
+.two__board td {
+    padding: 5px;
+}
+.board__third {
+    border-bottom: 1px solid black;
+    
+}
+
+.inner__send>form>ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.inner__send>form>ul>li {
+    margin: 10px;
+}
+
+.inner__finish {
+    display: flex;
+    flex-direction: row;
+}
+
+.finish__one {
+   width: 50%;
+}
+
+.finish__one>ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.finish__one>ul>li {
+    margin: 5px;
+}
+
+.finish__two {
+    width: 50%;
+    background: black;
+    color: white;
+    font-size: 2em;
+    padding: 20px;
+}
+
+.finish__two>table {
+    width: 100%;
+    
+}
+
+#result {
+    padding: 20px;
+    background: #4200A9;
+    height: auto;
+    margin: 0 auto;
+    width : 10%;
+    color: white;
+    text-align: center;
+    
+    cursor: pointer;
+}
+
+.rmodal {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2393px;
+    z-index: 999;
+}
+
+.rmodal__overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+.rmodal__content {
+    background-color: white;
+    padding: 50px 100px;
+    text-align: center;
+    position: fixed;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px); /*반응형 웹을 만들 때는 calc를 최대한 활용하자*/
+    
+    width: 400px;
+    margin: 0 auto;
+    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    animation: modal 0.5s ease-in-out;
+   
+}
+
+@keyframes modal {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+.hidden {
+    display: none;
+}
+
+.rmodal__content>h1 {
+    color: #4200A9;
+    font-size: 2em;
+    margin-bottom: 30px;
+
+}
+
+.rmodal__content>table {
+    border-top: 20px;
+    width: 100%;
+}
+
+.rmodal__content>table td {
+    padding: 5px;
+}
+
+.rmodal__content>h3 {
+    margin: 20px;
+}
+
+hr {
+    color: #E5E5E5;
+    
+}
+
+.rmodal__content>button {
+    all:unset;
+    cursor: pointer;
+    background: #4200A9;
+    
+    padding: 10px 20px;
+}
+
+.rmodal__content>button>a {
+    text-decoration: none;
+    color: white;
+}
+

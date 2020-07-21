@@ -7,7 +7,7 @@
     <title>My page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <link rel="stylesheet" type='text/css' media='screen' href="mypr.css">
+    <link rel="stylesheet" type='text/css' media='screen' href="css/mypr.css">
 
     <script>
         $(document).ready(function() {
@@ -25,7 +25,7 @@
 
 <body>
     <header>
-
+        <?php include "header.php"?>
     </header>
    
     <section>
@@ -75,7 +75,7 @@
             <div class="question">
                 
                 <div class="question__content">
-                <?php include "qnalist.php";?>
+                <?php include "qna2.php";?>
                 </div>
                 <div class="aa question__search">
                 <form name="form1" method="POST" action="qsearch.php">

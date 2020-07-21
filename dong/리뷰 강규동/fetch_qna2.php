@@ -19,13 +19,13 @@ $result = $statement->fetchAll();
 $output = '';
 foreach($result as $row)
 {
-    if($_GET["pname"] == $row["comment_pname"]){
+    if($_GET["userid"] == $row["comment_sender_name"]){
 
  $output .= '
  <div class="panel panel-default">
   <div class="panel-heading">  <mark>'.$row["comment_pname"].'</mark> <b>'.$row["comment_nick"].'</b>('.$row["comment_sender_name"].')님  <i>'.$row["date"].'</i></div>
   <div class="panel-body">'.$row["comment"].'</div>
-  <div class="panel-footer" align="right"><button type="button" class="btn btn-default reply" id="'.$row["comment_id"].'">답글</button></div>
+  <div class="panel-footer" align="right"></div>
  </div>
  ';
     }
@@ -61,7 +61,7 @@ function get_reply_comment($connect, $parent_id2 = 0, $marginleft = 0)
    <div class="panel panel-default" style="margin-left:'.$marginleft.'px">
     <div class="panel-heading"><b>↪</b>&nbsp;<b>'.$row["comment_nick"].'</b>('.$row["comment_sender_name"].')님의 답글 <i>'.$row["date"].'</i></div>
     <div class="panel-body">'.$row["comment"].'</div>
-    <div class="panel-footer" align="right"><button type="button" class="btn btn-default reply" id="'.$row["comment_id"].'">답글</button></div>
+    <div class="panel-footer" align="right"></div>
    </div>
    ';
    $output .= get_reply_comment($connect, $row["comment_id"], $marginleft);

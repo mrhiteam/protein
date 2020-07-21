@@ -25,7 +25,10 @@
             <a href="orderlist.php">주문목록</a>
             <a href="modify_order_form.php">주문관리</a>
         </div>
-        
+        <div>
+            <h2>공지사항 작성하기</h2>
+            <?php include "board_form.php";?>
+        </div>
 	</section> 
 </body>
 </html>

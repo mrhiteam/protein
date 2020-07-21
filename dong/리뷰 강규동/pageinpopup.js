@@ -18,7 +18,7 @@ function add_pick(a) {
 
 function order(a , b) {
         
-    window.open(`order.php?sendfee=${b}&price=${a}&pcount=${document.querySelector('#count').value}&basket=0&pname=${document.querySelector('#oname').value}`,"order","left=700,top=300,width=700,height=500,scrollbars=no,resizable=yes");
+    location.replace(`order.php?sendfee=${b}&price=${a}&pcount=${document.querySelector('#count').value}&basket=0&pname=${document.querySelector('#oname').value}`);
 }
 
 

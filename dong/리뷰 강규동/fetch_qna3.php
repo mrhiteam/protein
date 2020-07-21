@@ -19,7 +19,7 @@ $result = $statement->fetchAll();
 $output = '';
 foreach($result as $row)
 {
-    if($_GET["pname"] == $row["comment_pname"]){
+   
 
  $output .= '
  <div class="panel panel-default">
@@ -28,7 +28,7 @@ foreach($result as $row)
   <div class="panel-footer" align="right"><button type="button" class="btn btn-default reply" id="'.$row["comment_id"].'">답글</button></div>
  </div>
  ';
-    }
+    
  $output .= get_reply_comment($connect, $row["comment_id"]);
 }
 
