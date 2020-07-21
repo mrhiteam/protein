@@ -1,0 +1,330 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*상단광고*/
+#top {
+    width: 100%;
+    height: 70px;
+    background-color: #5763e6;
+    position: relative;
+}
+#top >a>.inner{
+    height: 100%;
+}
+#top >span {
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    right: 1%;
+    bottom:10%;
+    cursor: pointer;
+}/*상단광고 끝*/
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    width: 100%;
+}
+.inner {
+    width: 1024px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+header > .inner {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    position: relative;
+}
+#logo {
+    width: 180px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+}
+#logo > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+#logo > a img {
+    width: 100%;
+}
+header > .inner a {
+    color: rgba(0, 0, 0, 0.479);
+    font-size: 15px;
+    margin: 10px;
+}
+header > .inner a:hover {
+    color: #313CAD;
+}
+header li {
+    list-style-type: none;
+}
+header > .inner > ul > li {
+    display: inline;
+}
+footer nav,
+header nav {
+    width: 100%;
+    height: 45px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.158);
+}
+
+header nav > .inner {
+    position: relative;
+}
+header nav > .inner > ul {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+header nav > .inner > ul li {
+    display: inline;
+}
+header > nav > .inner > ul > li > a {
+    font-size: 18px;
+    padding: 10px;
+    margin-left: 30px;
+    display: inline-block;
+}
+header > nav > .inner > ul > li > a:hover{
+    color: #313CAD;
+}
+/*카테고리 시작*/
+#category > i,
+#category1 >i {
+    font-size: 18px;
+    padding: 13.5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cate, .cate1 {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background-color:rgba(255, 255, 255, 0.877);
+    display: none;
+}
+
+.cate > div > li,
+.cate1 > div > li {
+    width: 140px;
+    height: 50px;
+    box-sizing: border-box;
+}
+.cate > div > li > a:hover,
+.cate1 > div > li > a:hover{
+    color: #313CAD;
+}
+.cate > div > li > a,
+.cate1 > div > li > a  {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    padding:10px ;
+    font-weight: bold;
+}
+.cate > div,
+.cate1 > div  {
+    padding-top: 10px;
+}
+.cate>.inner,
+.cate1>.inner {
+    position: relative;
+}
+.cate .inner > li > ul,
+.cate1 .inner > li > ul {
+    position: absolute;
+    top: 10px;
+    left: 200px;
+    display:none;
+}
+.cate .inner > li > ul > li,
+.cate1 .inner > li > ul > li{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.cate .inner > li > ul > li > a:hover,
+.cate1 .inner > li > ul > li > a:hover{
+    color:  #313CAD;
+}
+/*카테고리 끝*/ 
+
+/*로그인 모달 시작*/
+            
+ button {
+    all: unset;
+    padding: 10px 30px;
+    margin-left: 390px;
+    cursor: pointer;
+    font-size: 30px;
+
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+.modal__overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.modal__content {
+    background-color: #fff;
+    width: 480px;
+    height: 600px;
+
+    z-index: 9999;
+}
+.bigmodal p {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+.modal__content p {
+    margin-bottom: 60px;
+}
+.hidden {
+    display: none;
+}
+#login_btn {
+    background-color: #313CAD;
+    width: 420px;
+    margin: 0 auto;
+}
+#login_btn > a {
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+.modal__content form ul li > input {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 2px 30px;
+    width: 420px;
+    box-sizing: border-box;
+}
+.login_join {
+    border-top: 1px solid black;
+    width: 420px;
+    margin: 30px auto;
+}
+.login_join ul {
+    display: flex;
+    justify-content: space-between;
+}
+#membership {
+    width: 480px;
+    height: 600px;
+    background-color: #fff;
+    margin-left: 10px;
+    z-index: 9999;
+    display: none;
+}
+.bigmodal {
+    display: flex;
+    width: 990px;
+    margin: 180px auto;
+    justify-content: center;
+}
+#membership > a {
+    color: black;
+    font-size: 30px;
+    padding: 5px 30px;
+    margin-left: 390px;
+    display: block;
+}
+#membership >table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 420px;
+    height: 140px;
+    margin: 10px auto;
+}
+#membership td,
+#membership th,
+#membership tr {
+    border: 1px solid black;
+    text-align: center;
+}
+#membership th {
+    width: 100px;
+    height: 60px;
+}
+/*로그인 모달 끝*/
+
+footer {
+    height: 320px;
+    background-color: #5e7c85af;
+}
+#footmenu {
+    position: relative;
+}
+#footmenu li > a {
+    font-size: 15px;
+    padding: 14px;
+    color: rgba(255, 255, 255, 0.699);
+}
+#footmenu li > a:hover {
+    color: white;
+    text-shadow: 0 0 3px black;
+}
+#footmenu li > a:first-child {
+    margin-left: 0;
+}
+#info {
+    width: 50%;
+    border-right: 1px solid white;
+    margin-top: 30px;
+}
+#footlogo {
+    width: 144px;
+    margin-top: 120px;
+}
+#footlogo img {
+    width: 100%;
+}
+footer > div:last-child {
+    display: flex;
+    justify-content: space-between;
+}
+footer p {
+    line-height: 2em;
+    color: rgba(255, 255, 255, 0.699);
+}
+#footmenu > li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#hidden_nav{
+                display: none;
+                position: fixed;
+                top: 0;
+    background-color: white
+            }
