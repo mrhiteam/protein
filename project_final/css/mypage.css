@@ -1,0 +1,419 @@
+* {
+      box-sizing: border-box;
+}
+
+.mgnb>li>div {
+      cursor: pointer;
+}
+/*
+.clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+}
+*/
+#wrap h1 {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 10px;
+}
+
+a {
+      text-decoration: none;
+      color: black;
+}
+
+#wrap {
+      
+      width: 1024px;
+      margin: 0 auto;
+      background-color: #eee;
+      
+}
+
+#mynav {
+
+      width: 200px;
+      text-align: center;
+      
+}
+
+.mgnb{
+      position: relative;
+      list-style-type: none;
+      z-index: 2;
+}
+
+.mgnb>li {
+      width: 100%;
+      background-color: #666;
+      position: relative;
+      
+}
+
+.mgnb>li>a {
+      display: block;
+      color: black;
+      padding: 10px;
+      cursor: pointer;
+}
+.msub1{
+      box-sizing: border-box;
+      padding: 20px;
+      width: 100%;
+      height: 150px;
+      background-color: #bbb;
+      display: block;
+      list-style-type: none;
+}
+.msub {
+      box-sizing: border-box;
+      padding: 20px;
+      width: 100%;
+      height: 100px;
+      background-color: #bbb;
+      display: block;
+      list-style-type: none;
+}
+
+.msub a {
+      color: #222;
+}
+
+.mgnb>li>div {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      width: 10px;
+      height: 10px;
+      border-left: 2px solid #ccc;
+      border-bottom: 2px solid #aaa;
+      transform: rotate(-45deg);
+}
+
+.mgnb>li>.vv {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+      width: 10px;
+      height: 10px;
+      border-left: 2px solid #ccc;
+      border-bottom: 2px solid #aaa;
+      transform: rotate(135deg);
+}
+
+.yuyu {
+      padding: 10px;
+}
+
+article {
+      float: right;
+      width: 800px;
+}
+
+#list{
+      box-sizing: border-box;
+      background-color: #999;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+}
+
+#memberinfo {
+      width: 800px;
+      display: flex;
+      justify-content: space-between;
+}
+
+#memberinfo>div {
+      width: 350px;
+      height: 150px;
+      padding: 5px;
+      border: 1px solid black;
+      background-color: white;
+}
+
+#memberinfo>div h2 {
+      font-size: 25px;
+      padding-bottom: 10px;
+}
+
+#memberinfo>div p {
+      padding-bottom: 5px;
+}
+
+#mybnf_split {
+      display: flex;
+      justify-content: space-around;
+}
+
+#mybnf_split div {
+      padding: 5px;
+}
+
+.mypage_subtitle {
+      width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      background-color: antiquewhite;
+}
+
+.mypage_subtitle div {
+      padding: 5px;
+}
+
+.pagechange{
+      margin: 0 auto;
+      width: 200px;
+      display: flex;
+      text-align: center;
+      border: 0px solid black;
+}
+
+.pagechange > div{
+      cursor: pointer;
+      border: 0px solid black;
+      width: 30px;
+      height: 30px;
+}
+/*주문확인*/
+/*
+.order_style1 {
+      display: flex;
+      list-style-type: none;
+      align-items: flex-start;
+}
+
+.order_style1>li {
+      text-align: center;
+      height: 30px;
+}
+
+.order_style1>li:nth-child(1) {
+      width: 150px;
+}
+
+.order_style1>li:nth-child(2) {
+      width: 80px;
+}
+
+.order_style1>li:nth-child(3) {
+      padding-left: 50px;
+      width: 300px;
+      text-align: left;
+}
+
+.order_style1>li:nth-child(4) {
+      width: 100px;
+}
+
+.order_style1>li:nth-child(5) {
+      width: 100px;
+}
+
+.order_style2 {
+      display: flex;
+      list-style-type: none;
+      align-items: flex-start;
+}
+
+.order_style2>li {
+      height: 50px;
+      text-align: center;
+      padding-top: 10px;
+}
+
+.order_style2>li:nth-child(1) {
+      width: 150px;
+}
+
+.order_style2>li:nth-child(2) {
+      width: 80px;
+}
+
+.order_style2>li:nth-child(3) {
+      width: 50px;
+      padding-top: 0px;
+}
+
+.order_style2>li:nth-child(4) {
+      width: 250px;
+}
+
+.order_style2>li:nth-child(5) {
+      width: 100px;
+}
+
+.order_style2>li:nth-child(6) {
+      width: 100px;
+}
+
+.order_style2>li img {
+      width: 50px;
+      height: 50px;
+}
+*/
+
+
+/*장바구니*/
+/*
+.basket_style1 {
+      display: flex;
+      padding-top: 5px;
+      list-style-type: none;
+      align-items: flex-start;
+}
+
+.basket_style1>li {
+      text-align: center;
+      height: 30px;
+}
+
+.basket_style1>li:nth-child(1) {
+      width: 300px;
+}
+
+.basket_style1>li:nth-child(2) {
+      width: 70px;
+}
+
+.basket_style1>li:nth-child(3) {
+      width: 100px;
+}
+
+.basket_style1>li:nth-child(4) {
+      width: 100px;
+}
+
+.basket_style1>li:nth-child(5) {
+      width: 50px;
+}
+
+.basket_style2 {
+      display: flex;
+      list-style-type: none;
+      align-items: flex-start;
+}
+
+.basket_style2>li img {
+      width: 50px;
+      height: 50px;
+}
+
+.basket_style2>li {
+      height: 50px;
+      text-align: center;
+      padding-top: 10px;
+}
+
+.basket_style2>li>a {
+      display: block;
+      width: 50px;
+      text-align: center;
+}
+
+.basket_style2>li:nth-child(1) {
+      padding-left: 10px;
+      padding-top: 0px;
+      width: 50px;
+}
+
+.basket_style2>li:nth-child(2) {
+      width: 250px;
+}
+
+.basket_style2>li:nth-child(3) {
+      width: 70px;
+}
+
+.basket_style2>li:nth-child(4) {
+      width: 100px;
+}
+
+.basket_style2>li:nth-child(5) {
+      width: 100px;
+}
+
+.basket_style1>li:nth-child(6) {
+      width: 50px;
+}
+#basket_price{
+      text-align: right;
+      font-size: 1.2em;
+      padding-right: 10px;
+}
+#btnorder > a{
+      margin: 0 auto;
+      display: block;
+      width: 180px;
+      height: 70px;
+      border: 1px solid black;
+      padding-top: 15px;
+      font-size: 1.7em;
+      text-align: center;
+}*/
+
+
+/*찜목록*/
+/*
+.pick_style1 {
+      display: flex;
+      list-style-type: none;
+      align-items: flex-start;
+}
+
+.pick_style1>li {
+      text-align: center;
+      height: 30px;
+}
+
+.pick_style1>li:nth-child(1) {
+      width: 300px;
+}
+
+.pick_style1>li:nth-child(2) {
+      width: 100px;
+}
+
+.pick_style1>li:nth-child(3) {
+      width: 100px;
+}
+
+.pick_style2 {
+      display: flex;
+      list-style-type: none;
+      align-items: flex-start;
+}
+
+.pick_style2>li img {
+      width: 50px;
+      height: 50px;
+}
+
+.pick_style2>li {
+      height: 50px;
+      text-align: center;
+      padding-top: 10px;
+}
+
+.pick_style2>li:nth-child(1) {
+      padding-left: 10px;
+      padding-top: 0px;
+      width: 50px;
+}
+
+.pick_style2>li:nth-child(2) {
+      width: 250px;
+}
+
+.pick_style2>li:nth-child(3) {
+      width: 100px;
+}
+
+.pick_style2>li:nth-child(4) {
+      width: 100px;
+}
+
+.pick_style2>li:nth-child(5) {
+      width: 50px;
+}*/
