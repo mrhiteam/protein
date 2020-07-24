@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="js/jquery.color-2.1.2.min.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/367c26cb8d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link rel="stylesheet" href="css/tab2.css" />
+
+    <title>벨지안 블루</title>
+    
+    <script>
+      // TABMENU
+      $(document).ready(function () {
+        $(".tab-link").click(function () {
+          //선택자를 통해 tabs 메뉴를 클릭 이벤트를 지정해줍니다.
+          var tab_id = $(this).attr("data-tab");
+          $(".tab-link").removeClass("current"); //선택 되있던 탭의 current css를 제거하고
+          $(".tab-content").removeClass("current");
+
+          $(this).addClass("current"); ////선택된 탭에 current class를 삽입해줍니다.
+          $("#" + tab_id).addClass("current");
+          // data-tab 메뉴에 할당해둔 이름을 #을 통해 제이쿼리 셀렉트로 id를 찾음
+        });
+      });
+    </script>
+
+ 
+  </head>
+  <body>
+    
+    <section class="section">
+      <!-- 탭 메뉴 상단 시작 -->
+      <ul class="tabs inner margin--top">
+        <li class="tab-link current" data-tab="tab-1">진행중 이벤트</li>
+        <li class="tab-link" data-tab="tab-2">종료된 이벤트</li>
+      </ul>
+      <!-- 탭 메뉴 상단 끝 -->
+      <!-- 탭 메뉴 내용 시작 -->
+      <div id="tab-1" class="tab-content current inner">
+        <h1><span>이벤트</span>
+          참여하고 !
+          <span>혜택</span>
+          누리자 !</h1></h1>
+        <div>
+          <div class="tab__aticle">
+            <div>
+              <a href="#">
+                <img src="image/이벤트/1.jpg" alt="상품" />
+                <p>이벤트 기간 : 2020.07.01 ~ 2020.07.30</p>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="image/이벤트/2.jpg" alt="상품" />
+                <p>이벤트 기간 : 2020.07.14 ~ 2020.09.30</p>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="image/이벤트/3.jpg" alt="상품" />
+                <p>이벤트 기간 : 2020.07.20 ~ 2020.07.30</p>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="image/이벤트/4.jpg" alt="상품" />
+                <p>이벤트 기간 : 2020.07.01 ~ 2020.07.22</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-2" class="tab-content inner">
+        <h1>종료된 이벤트</h1>
+        <div>
+          <div class="tab__aticle">
+            <div>
+              <a href="#">
+                <img src="image/이벤트/1.jpg" alt="상품" />
+                <p>이벤트 기간 : 2020.06.01 ~ 2020.07.10</p>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="image/이벤트/2.jpg" alt="상품" />
+                <p>이벤트 기간 : 2020.05.14 ~ 2020.06.30</p>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="image/이벤트/3.jpg" alt="상품" />
+                <p>이벤트 기간 : 2020.06.01 ~ 2020.06.30</p>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="image/이벤트/4.jpg" alt="상품" />
+                <p>이벤트 기간 : 2020.05.14 ~ 2020.05.30</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 탭 메뉴 내용 끝 -->
+    </section>
+
+   
+  </body>
+</html>

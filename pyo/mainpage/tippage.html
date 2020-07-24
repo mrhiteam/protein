@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="js/jquery.color-2.1.2.min.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/367c26cb8d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link rel="stylesheet" href="css/tab.css" />
+
+    <title>벨지안 블루</title>
+    <script>
+      // TABMENU
+      $(document).ready(function () {
+        $(".tab-link").click(function () {
+          //선택자를 통해 tabs 메뉴를 클릭 이벤트를 지정해줍니다.
+          var tab_id = $(this).attr("data-tab");
+          $(".tab-link").removeClass("current"); //선택 되있던 탭의 current css를 제거하고
+          $(".tab-content").removeClass("current");
+
+          $(this).addClass("current"); ////선택된 탭에 current class를 삽입해줍니다.
+          $("#" + tab_id).addClass("current");
+          // data-tab 메뉴에 할당해둔 이름을 #을 통해 제이쿼리 셀렉트로 id를 찾음
+        });
+      });
+    </script>
+  </head>
+  <body>
+  
+
+    <section class="section">
+      <!-- 탭 메뉴 상단 시작 -->
+
+      <!-- 탭 메뉴 상단 끝 -->
+      <!-- 탭 메뉴 내용 시작 -->
+      <div class="tab-content current inner">
+        <h1>헬스 팁</h1>
+        <div class="videos">
+          <div class="video">
+            <h3>#벤츠프레스</h3>
+            <p>벤츠프레스하면 어깨가 아플 수 밖에 없는 이유</p>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/5KoENbvZFtU"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="video">
+            <h3>#스쿼트 운동</h3>
+            <p>안전하게 스쿼트 하는 방법</p>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/NtX8GGbDCuc"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="videos">
+          <div class="video">
+            <h3>#벤츠프레스</h3>
+            <p>벤츠프레스하면 어깨가 아플 수 밖에 없는 이유</p>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/5KoENbvZFtU"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="video">
+            <h3>#스쿼트</h3>
+            <p>안전하게 스쿼트 하는 방법</p>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/FlGyhbaIsCU"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div id="paging"></div>
+
+      <!-- 탭 메뉴 내용 끝 -->
+    </section>
+
+  </body>
+</html>

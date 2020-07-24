@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="js/jquery.color-2.1.2.min.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/367c26cb8d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link rel="stylesheet" href="css/tab.css" />
+
+    <title>벨지안 블루</title>
+    <script>
+      // TABMENU
+      $(document).ready(function () {
+        $(".tab-link").click(function () {
+          //선택자를 통해 tabs 메뉴를 클릭 이벤트를 지정해줍니다.
+          var tab_id = $(this).attr("data-tab");
+          $(".tab-link").removeClass("current"); //선택 되있던 탭의 current css를 제거하고
+          $(".tab-content").removeClass("current");
+
+          $(this).addClass("current"); ////선택된 탭에 current class를 삽입해줍니다.
+          $("#" + tab_id).addClass("current");
+          // data-tab 메뉴에 할당해둔 이름을 #을 통해 제이쿼리 셀렉트로 id를 찾음
+        });
+      });
+    </script>
+  </head>
+  <body>
+   
+    <section class="section">
+      <!-- 탭 메뉴 상단 시작 -->
+      <ul class="tabs inner margin--top">
+        <li class="tab-link current" data-tab="tab-1">전체</li>
+        <li class="tab-link" data-tab="tab-2">닭가슴살</li>
+        <li class="tab-link" data-tab="tab-3">도시락</li>
+        <li class="tab-link" data-tab="tab-4">세트</li>
+      </ul>
+      <!-- 탭 메뉴 상단 끝 -->
+      <!-- 탭 메뉴 내용 시작 -->
+      <div id="tab-1" class="tab-content current inner">
+        <h1>전체</h1>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!--텝메뉴 2-->
+      <div id="tab-2" class="tab-content inner">
+        <h1>단백질 쉐이크</h1>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/8.jpg" alt="상품" />
+            <p>단백질 쉐이크</p>
+            <p>30,000원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/9.jpg" alt="상품" />
+            <p>단백질 쉐이크</p>
+            <p>50,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/8.jpg" alt="상품" />
+            <p>단백질 쉐이크</p>
+            <p>55,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/7.jpg" alt="상품" />
+            <p>WPI</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/7.jpg" alt="상품" />
+            <p>WPC</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/8.jpg" alt="상품" />
+            <p>초코맛 쉐이크</p>
+            <p>25,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/9.jpg" alt="상품" />
+            <p>단백질 쉐이크</p>
+            <p>15,800원</p>
+            <div>
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/5.jpg" alt="상품" />
+            <p>크롬 도금 아령맛</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 텝메뉴 3 -->
+      <div id="tab-3" class="tab-content inner">
+        <h1>체중조절</h1>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+      </div>
+         <!-- 탭 메뉴 내용 시작 -->
+      <div id="tab-4" class="tab-content inner">
+        <h1>세트</h1>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div id="tab-1" class="tab-content current inner">
+        <h1>전체</h1>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+        <div class="tab-content__item">
+          <a href="#"
+            ><img src="image/상품/1.jpg" alt="상품" />
+            <p>크롬 도금 아령</p>
+            <p>15,800원</p>
+            <div>
+              <!--별점 들어가는 곳 임시-->
+
+              <i class="xi-cart">장바구니 담기</i>
+              <i class="xi-cart-add">찜하기</i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 탭 메뉴 내용 끝 -->
+    </section>
+  </body>
+</html>

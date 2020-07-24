@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="https://kit.fontawesome.com/367c26cb8d.js" crossorigin="anonymous"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+            rel="stylesheet"/>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"/>
+        <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"/>
+        <link rel="stylesheet" href="css/index.css"/>
+
+        <title>벨지안 블루</title>
+        <script>
+            var SetTime = 10000; // 최초 설정 시간(기본 : 초)
+
+            function msg_time() {
+                // 1초씩 카운트
+
+                m = Math.floor(SetTime / 60) + "분 " + (
+                    SetTime % 60
+                ) + "초"; // 남은 시간 계산
+
+                var msg = "특별 할인 구매 가능 시간 <font color='red'>" + m + "</font> 남았습니다.";
+
+                document.all.Timer.innerHTML = msg; // div 영역에 보여줌
+
+                SetTime--; // 1초씩 감소
+
+                if (SetTime < 0) {
+                    // 시간이 종료 되었으면..
+
+                    clearInterval(tid); // 타이머 해제
+                    alert("종료");
+                }
+            }
+
+            window.onload = function TimerStart() {
+                tid = setInterval("msg_time()", 1000);
+            };
+        </script>
+
+        <style></style>
+    </head>
+    <body>
+        <div class="swiper-container swiper-container-m">
+            <div class="swiper-wrapper big-slide">
+                <div class="swiper-slide">
+                    <img class="img__size" src="image/슬라이드 사진/3.jpg" alt="메인 슬라이드"/>
+                </div>
+                <div class="swiper-slide">
+                    <img class="img__size" src="image/슬라이드 사진/3.jpg" alt="메인 슬라이드"/>
+                </div>
+                <div class="swiper-slide">
+                    <img class="img__size" src="image/슬라이드 사진/3.jpg" alt="메인 슬라이드"/>
+                </div>
+                <div class="swiper-slide">
+                    <img class="img__size" src="image/슬라이드 사진/3.jpg" alt="메인 슬라이드"/>
+                </div>
+                <div class="swiper-slide">
+                    <img class="img__size" src="image/슬라이드 사진/3.jpg" alt="메인 슬라이드"/>
+                </div>
+                <div class="swiper-slide">
+                    <img class="img__size" src="image/슬라이드 사진/3.jpg" alt="메인 슬라이드"/>
+                </div>
+                <div class="swiper-slide">
+                    <img class="img__size" src="image/슬라이드 사진/3.jpg" alt="메인 슬라이드"/>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <section>
+            <article class="text--center">
+                <div class="inner">
+                    <p class="margin--top">BEST PRODUCT</p>
+                    <h2 class="margin--bottom">벨지안 블루 실시간 BEST 상품</h2>
+
+                    <div class="swiper-container swiper-container-s">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div><img src="image/슬라이드 사진2/1.jpg" alt=""/></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img__size" src="image/슬라이드 사진2/2.jpg" alt="베스트 상품 슬라이드"/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img__size" src="image/슬라이드 사진2/3.jpg" alt="베스트 상품 슬라이드"/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img__size" src="image/슬라이드 사진2/4.jpg" alt="베스트 상품 슬라이드"/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img__size" src="image/슬라이드 사진2/5.jpg" alt="베스트 상품 슬라이드"/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img__size" src="image/슬라이드 사진2/6.jpg" alt="베스트 상품 슬라이드"/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img__size" src="image/슬라이드 사진2/7.jpg" alt="베스트 상품 슬라이드"/>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </article>
+            <article class="sale">
+                <div class="inner">
+                    <p>건강한 뉴스</p>
+                    <h2>벨지안 블루 건강한 팁</h2>
+                    <div class="bestItem">
+                        <iframe
+                            width="50%"
+                            height="270"
+                            src="https://www.youtube.com/embed/3NSgf8NVZGo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen="allowfullscreen"></iframe>
+
+                        <div class="bestItem__item">
+                            <a href="">
+                                <h3>득근 득근 안전벨트</h3>
+                                <img src="image/상품/벨트1.png" alt="벨트"/></a>
+                            <a href="">
+                                <div>
+                                  <h3>꾸준한 노력도 중요하지만<br>
+                                   안전도 중요합니다.<br>
+                                   건강하게 오래하자!<br>건강을 위한 할인 이벤트!<br><del>104,000원</del> >> 72,000원</h3>
+
+                              </div>
+                                <div id="Timer"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="eventpay">
+                <div class="inner">
+                    <a href=""><img src="image/배너/두툼.jpg"></a>
+                    <a href=""><img src="image/배너/토스.jpg"></a>
+                </div>
+
+            </article>
+        </section>
+
+        <script>
+            const openButton = document.querySelector("#open");
+
+            const modal = document.querySelector(".modal");
+
+            const closeButton = modal.querySelector("button");
+            const openModal = function () {
+                modal
+                    .classList
+                    .remove("hidden");
+            };
+            const closeModal = function () {
+                modal
+                    .classList
+                    .add("hidden");
+            };
+
+            closeButton.addEventListener("click", closeModal);
+            openButton.addEventListener("click", openModal);
+        </script>
+
+<script>
+  var mswiper = new Swiper(".swiper-container-m", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    keyboard: {
+      enabled: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+  $(window).resize(function () {
+    // width값을 가져오기
+    var width_size = window.outerWidth;
+
+    // 800 이하인지 if문으로 확인
+    if (width_size <= 768) {
+      mswiper.autoplay.stop();
+      
+    } else {
+      mswiper.autoplay.start();
+    }
+  });
+  var swiper = new Swiper(".swiper-container-s", {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    loop: true,
+    keyboard: {
+      enabled: true,
+    },
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      1000: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+      1240: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+      1440: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
+  });
+  $(window).resize(function () {
+    // width값을 가져오기
+    var width_size = window.outerWidth;
+
+    // 800 이하인지 if문으로 확인
+    if (width_size <= 768) {
+      swiper.autoplay.stop();
+      
+    } else {
+      swiper.autoplay.start();
+    }
+  });
+</script>
+    </body>
+</html>

@@ -1,0 +1,346 @@
+/* SWIPER */
+:root {
+    --swiper-theme-color: #313cad;
+}
+
+* {
+    font-family: "Noto Sans KR", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.inner {
+    width: 1024px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+sub {
+  font-weight: 100;
+  font-size: 14px;
+  color: gray;
+}
+
+article > .inner > h2 {
+    color: #21286A;
+    text-align: center;
+    margin-bottom: 1vw;
+}
+article{
+  margin-top: 4vw;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/*메인 슬라이드*/
+.big-slide {
+    height: 54vh;
+}
+.big-slide > .swiper-slide {
+    display: block;
+    height: 50vh;
+    overflow: hidden;
+}
+.big-slide > .swiper-slide > img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide {
+    width: 100%;
+}
+
+.swiper-button-next {
+    background: none;
+}
+.small-slide > div {
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 100%;
+  height: 360px;
+}
+.swiper-container-s {
+    width: 100%;
+    height: 400px;
+}
+/* 슬라이드 버튼 수정  < > */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    text-shadow: 0 0 5px black;
+    color: white;
+}
+
+/* 크기 줄어들면 버튼 오류 떠서 수정 하는 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+/*제목 박스*/
+.namebox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+.namebox > a {
+    color: rgba(0, 0, 0, 0.685);
+}
+.namebox > a:hover {
+    color: black;
+}
+.namebox > .fff {
+    color: #fff;
+}
+.namebox > .fff:hover {
+    color: #fff;
+}
+/* 벨지안 오리진 광고 */
+.origin {
+    margin-top: 24px;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+}
+.origin > a {
+    display: block;
+    border:1px solid black;
+    height: 100%;
+}
+.origin > a:nth-child(1) {
+    width: 50%;
+}
+.origin > a > img {
+    width: 100%;
+    height: 100%;
+}
+
+.origin > a:nth-child(2),
+.origin > a:nth-child(3) {
+    width: 25%;
+}
+/* 영상 이벤트 광고*/
+.sale {
+    width: 100%;
+    height: 700px;
+    background: url("/image/event/health.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.sale .inner > img {
+    width: 80%;
+    margin-left: 10%;
+}
+.opac {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.562);
+}
+.sale > .opac > .inner {
+    color: #fff;
+}
+.bestItem {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.bestItem > iframe {
+    border: 5px solid #fff;
+    box-sizing: border-box;
+    width: 50%;
+}
+.bestItem__item {
+    width: 50%;
+    background-color: #fff;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    box-sizing: border-box;
+    color: black;
+    overflow: hidden;
+    cursor: pointer;
+}
+.bestItem__item > a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    transition: 0.3s;
+    display: block;
+    color: #fff;
+}
+/* 1024px 이하부터 display none */
+
+.itempay p {
+    font-size: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.bestItem__item>div{
+  font-size: 16px
+}
+.bestItem__item:hover .itempay {
+    left: 0;
+}
+
+.bestItem__item img {
+    width: 50%;
+}
+.bestItem__item h2 > span {
+    font-size: 40px;
+    color: #313cad;
+    font-weight: bolder;
+}
+.bestItem__item del {
+    font-size: 1vw;
+    color: gray;
+}
+article .inner {
+    padding-top: 12px;
+    padding-bottom: 96px;
+}
+.sale .inner p:nth-child(1) {
+    padding-bottom: 30px;
+}
+
+/*결제 이벤트 광고*/
+.eventpay > div {
+    display: flex;
+    justify-content: center;
+    padding-top: 48px;
+    padding-bottom: 72px;
+}
+.eventpay a {
+    display: block;
+    width: 50%;
+    height: 120px;
+}
+.eventpay a img {
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width: 1024px) {
+    .inner {
+        width: 100%;
+    }
+    /*메인 슬라이드 */
+    .big-slide {
+        height: 40vh;
+    }
+    .big-slide > .swiper-slide {
+
+        height: 36vh;
+
+    }
+    .big-slide > .swiper-slide > img {
+        height: 100%;
+        width: auto;
+    }
+    /* 서브 슬라이드 */
+    .small-slide > div {
+      height: 34vw;
+    }
+    .swiper-container-s {
+        width: 100%;
+        height: 40vw;
+    }
+    /* 팁 광고 상품 hover 제거*/
+    .bestItem__item > a {
+      display: none;
+    }
+    /* 팁 광고 */
+    .bestItem__item>div{
+      font-size: 14px
+    }
+    .bestItem {
+      height: 288px;
+      overflow: hidden;
+    }
+
+}
+@media screen and (max-width: 768px) {
+  /*메인 슬라이드 */
+  .big-slide {
+    height: 28vh;
+}
+.big-slide > .swiper-slide {
+    height: 24vh;
+
+}
+
+
+  /* 벨지안 오리진 광고 */
+    .origin {
+        margin-top: 24px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        height: 50vw;
+    }
+    .origin > a {
+        display: block;
+        height: 50vw;
+    }
+    .origin > a:nth-child(1) {
+        width: 100%;
+    }
+
+    .origin > a:nth-child(2),
+    .origin > a:nth-child(3) {
+        display: none;
+    }
+  /*팁 광고 */
+  .bestItem > iframe {
+  
+    width: 100%;
+    height: 50%;
+}
+.bestItem__item {
+    width: 100%;
+  height: 50%;
+}
+.bestItem {
+  height: 600px;
+}
+.sale{
+  height: 100vh;
+}
+/*결제 이벤트 광고*/
+.eventpay a {
+  width: 100%;
+  height: 20vw;
+}
+.eventpay a:nth-child(1){
+  display: none;
+}
+}
