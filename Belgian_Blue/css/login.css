@@ -1,0 +1,78 @@
+.form_login {
+    background-color: #fff;
+    width: 100%;
+    height: 300px;
+    z-index: 9999;
+}
+
+#form_login_btn {
+    background-color: #313CAD;
+    width: 90%;
+    margin-left: 5%;
+}
+.form_login form ul{
+    margin: 0 auto;
+}
+.form_login form ul li>input {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    margin-left: 5%;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+#form_login_btn>a {
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.form_login_join {
+    border-top: 1px solid black;
+    width: 90%;
+    margin: 30px auto;
+}
+
+.form_login_join ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+#form_membership {
+    width: 90%;
+    height: 600px;
+    background-color: #fff;
+    margin-left: 10px;
+    z-index: 9999;
+}
+#form_membership>a {
+    color: black;
+    font-size: 30px;
+    padding: 5px 30px;
+    margin-left: 90%;
+    display: block;
+}
+
+#form_membership>table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 90%;
+    height: 140px;
+    margin: 10px auto;
+}
+
+#form_membership td, #form_membership th, #form_membership tr {
+    border: 1px solid black;
+    text-align: center;
+}
+
+#form_membership th {
+    width: 100px;
+    height: 60px;
+}

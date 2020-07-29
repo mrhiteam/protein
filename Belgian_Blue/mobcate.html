@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.4.1.min.js"></script>
+    
+    <script>
+        //모바일 카테고리 열기 닫기
+        function mobcateon() {
+            document.querySelector(".modal").style.display = "block";
+        }
+        function mobcateoff() {
+            document.querySelector(".modal").style.display = "none";
+        }
+        //모바일 카테고리 메뉴 열기 닫기
+        var mobmenu1_1 = 1;
+        var mobmenu2_1 = 1;
+        var mobmenu3_1 = 1;
+        var mobmenu4_1 = 1;
+        function mobmenu1(a) {
+            if (a == 1) {
+                if (mobmenu1_1 == 1) {
+                    document.querySelector(".mobmenu1").style.display = "block";
+                    mobmenu1_1 = 0;
+                }
+                else {
+                    document.querySelector(".mobmenu1").style.display = "none";
+                    mobmenu1_1 = 1;
+                }
+            }
+            else if (a == 2) {
+                if (mobmenu2_1 == 1) {
+                    document.querySelector(".mobmenu2").style.display = "block";
+                    mobmenu2_1 = 0;
+                }
+                else {
+                    document.querySelector(".mobmenu2").style.display = "none";
+                    mobmenu2_1 = 1;
+                }
+            }
+            else if (a == 3) {
+                if (mobmenu3_1 == 1) {
+                    document.querySelector(".mobmenu3").style.display = "block";
+                    mobmenu3_1 = 0;
+                }
+                else {
+                    document.querySelector(".mobmenu3").style.display = "none";
+                    mobmenu3_1 = 1;
+                }
+            }
+            else if (a == 4) {
+                if (mobmenu4_1 == 1) {
+                    document.querySelector(".mobmenu4").style.display = "block";
+                    mobmenu4_1 = 0;
+                }
+                else {
+                    document.querySelector(".mobmenu4").style.display = "none";
+                    mobmenu4_1 = 1;
+                }
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <header id="mobheader">
+        <div><a href="#" class="mobcateon" onclick="mobcateon()">카테고리</a></div>
+        <div class="modal">
+            <div class="mobcatebg"></div>
+            <div class="mobcate-1">
+                <div>
+                    <a href="#" class="mobcateoff" onclick="mobcateoff()">
+                        <div></div>
+                        <div></div>
+                    </a>
+                </div>
+
+                <div class="moblogin-join">
+                    <a href="#" class="moblogin">로그인</a>
+                    <a href="#" class="mobjoin">회원가입</a>
+                </div>
+                <div class="mobmenu">
+                    <ul><a href="#" onclick="mobmenu1(1)">쉐이크/보조제<div class="boxrota"></div>
+                            <div></div>
+                        </a>
+                        <div class="mobmenu1">
+                            <li><a href="#">전체</a></li>
+                            <li><a href="#">단백질 쉐이크</a></li>
+                            <li><a href="#">웨이트 보조제</a></li>
+                            <li><a href="#">체중 조절</a></li>
+                        </div>
+                    </ul>
+                    <ul><a href="#" onclick="mobmenu1(2)">스포츠웨어<div class="boxrota"></div>
+                            <div></div>
+                        </a>
+                        <div class="mobmenu2">
+                            <li><a href="#">전체</a></li>
+                            <li><a href="#">MAN</a></li>
+                            <li><a href="#">WOMAN</a></li>
+                            <li><a href="#">SHOSE</a></li>
+                            <li><a href="#">CAP</a></li>
+                        </div>
+                    </ul>
+                    <ul><a href="#" onclick="mobmenu1(3)">헬스 용품<div class="boxrota"></div>
+                            <div></div>
+                        </a>
+                        <div class="mobmenu3">
+                            <li><a href="#">전체</a></li>
+                            <li><a href="#">덤벨/바벨/케틀벨</a></li>
+                            <li><a href="#">스트랩/랩/벨트</a></li>
+                            <li><a href="#">탄력봉</a></li>
+                            <li><a href="#">기타</a></li>
+                        </div>
+                    </ul>
+                    <ul><a href="#" onclick="mobmenu1(4)">웨이트 식품<div class="boxrota"></div>
+                            <div></div>
+                        </a>
+                        <div class="mobmenu4">
+                            <li><a href="#">전체</a></li>
+                            <li><a href="#">닭가슴살</a></li>
+                            <li><a href="#">다이어트 도시락</a></li>
+                            <li><a href="#">세트</a></li>
+                        </div>
+                    </ul>
+                    <sub>이용해주셔서 감사합니다.</ㄴ>
+                </div>
+            </div>
+
+        </div>
+    </header>
+</body>
+
+</html>

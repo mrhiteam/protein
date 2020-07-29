@@ -1,0 +1,58 @@
+@import 'reset.css';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap';
+#board_box{
+    width: 98%;
+    margin: 0 auto;
+    height: 70%;
+}
+#board_list {
+    width: 98%;
+}
+
+#board_list>tr:nth-child(1) {
+
+    text-align: center;
+    height: 36px;
+    font-size: 16px;
+}
+
+#board_list td {
+    padding: 10px 5px;
+    background-color: #313cad20;
+}
+
+
+#page_num {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    
+}
+#page_num>li>a{
+    text-decoration: none;
+    color: black;
+}
+
+#view_content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+#view_content>li {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 20px;
+}
+
+#view_content>li:nth-child(1) {
+     background: #313cad;
+     color: white;
+}
+
+#board_box a {
+    /*text-decoration: underline !important;*/
+    cursor: pointer;
+}

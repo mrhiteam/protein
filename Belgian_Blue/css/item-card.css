@@ -1,0 +1,32 @@
+.item-card{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            border-bottom: 0.1px solid #313bad3b;
+            box-sizing: border-box;
+            
+        }
+        .item-card a{
+            padding: 18%;
+            display: block;
+            width: 100%;
+            height: 80%;
+            border:1px solid #313bad3b;
+        }
+        .item-card img{
+            margin-left: 50%;
+            transform: translate(-50%,0);
+            height: 100%;
+        }
+        .item-card h3{
+            width: 100%;
+            text-align: center;
+            font-size: 22px;
+            color:#21286A;
+        }
+        .item-card p{
+            width: 100%;
+            text-align: center;
+        }

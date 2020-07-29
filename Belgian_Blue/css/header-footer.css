@@ -1,0 +1,621 @@
+    * {
+        font-family: 'Noto Sans KR', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #mobheader {
+        display: none;
+    }
+    #pcheader{
+        display: block;
+    }
+    /*상단광고*/
+
+    #pcheader #top {
+        width: 100%;
+        height: 70px;
+        background-color: #5763e6;
+        position: relative;
+    }
+
+    #pcheader #top>a>.inner {
+        height: 100%;
+    }
+
+    #pcheader #top>span {
+        position: absolute;
+        font-size: 30px;
+        color: #fff;
+        right: 1%;
+        bottom: 10%;
+        cursor: pointer;
+    }
+
+    /*상단광고 끝*/
+
+    #pcheader a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #pcheader {
+        width: 100%;
+    }
+
+    #pcheader .inner, footer .inner {
+        position: relative;
+        width: 1024px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    #pcheader>.inner {
+        display: flex;
+        justify-content: space-between;
+        height: 150px;
+        position: relative;
+    }
+
+    #pcheader #logo {
+        width: 180px;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+    }
+
+    #pcheader #logo>a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    #pcheader #logo>a img {
+        width: 100%;
+    }
+
+    #pcheader>.inner a {
+        color: rgba(0, 0, 0, 0.479);
+        font-size: 15px;
+        margin: 10px;
+    }
+
+    #pcheader>.inner a:hover {
+        color: #313CAD;
+    }
+
+    #pcheader li {
+        list-style-type: none;
+    }
+
+    #pcheader>.inner>ul>li {
+        display: inline;
+    }
+
+    footer nav, #pcheader nav {
+        width: 100%;
+        height: 45px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.158);
+    }
+
+    #pcheader nav>.inner {
+        position: relative;
+    }
+
+    #pcheader nav>.inner>ul {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    #pcheader nav>.inner>ul li {
+        display: inline;
+    }
+
+    #pcheader>nav>.inner>ul>li>a {
+        font-size: 18px;
+        padding: 10px;
+        margin-left: 30px;
+        display: inline-block;
+    }
+
+    #pcheader>nav>.inner>ul>li>a:hover {
+        color: #313CAD;
+    }
+
+    #hidden_nav {
+        position: relative;
+        z-index: 4;
+    }
+
+    /*카테고리 시작*/
+
+    #pcheader #category>i, #pcheader #category1>i {
+        box-sizing: border-box;
+        font-size: 18px;
+        padding: 13.5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    #pcheader .cate, #pcheader .cate1 {
+        position: relative;
+        width: 100%;
+        height: 260px;
+        background-color: rgba(255, 255, 255, 0.877);
+        display: none;
+        z-index: 4;
+    }
+
+    #pcheader .cate>div>li, #pcheader .cate1>div>li {
+        width: 140px;
+        height: 50px;
+        box-sizing: border-box;
+    }
+
+    #pcheader .cate>div>li>a:hover, #pcheader .cate1>div>li>a:hover {
+        color: #313CAD;
+    }
+
+    #pcheader .cate>div>li>a, #pcheader .cate1>div>li>a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    #pcheader .cate>div, #pcheader .cate1>div {
+        padding-top: 10px;
+    }
+
+    #pcheader .cate>.inner, #pcheader .cate1>.inner {
+        position: relative;
+    }
+
+    #pcheader .cate .inner>li>ul, #pcheader .cate1 .inner>li>ul {
+        position: absolute;
+        top: 10px;
+        left: 200px;
+        display: none;
+    }
+
+    #pcheader .cate .inner>li>ul>li, #pcheader .cate1 .inner>li>ul>li {
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    #pcheader .cate .inner>li>ul>li>a:hover, #pcheader .cate1 .inner>li>ul>li>a:hover {
+        color: #313CAD;
+    }
+
+    /*카테고리 끝*/
+
+    /*로그인 모달 시작*/
+
+    button {
+        all: unset;
+        padding: 10px 30px;
+        margin-left: 390px;
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+    }
+
+    .modal__overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    .modal__content {
+        background-color: #fff;
+        width: 480px;
+        height: 600px;
+        z-index: 9999;
+    }
+
+    .bigmodal p {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .modal__content p {
+        margin-bottom: 60px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #pcheader #login_btn {
+        background-color: #313CAD;
+        width: 420px;
+        margin: 0 auto;
+    }
+
+    #pcheader #login_btn>a {
+        color: white;
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 30px;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
+
+    .modal__content form ul li>input {
+        font-size: 28px;
+        font-weight: bold;
+        padding: 5px 10px;
+        margin: 2px 30px;
+        width: 420px;
+        box-sizing: border-box;
+    }
+
+    .login_join {
+        border-top: 1px solid black;
+        width: 420px;
+        margin: 30px auto;
+    }
+
+    .login_join ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #membership {
+        width: 480px;
+        height: 600px;
+        background-color: #fff;
+        margin-left: 10px;
+        z-index: 9999;
+        display: none;
+    }
+
+    .bigmodal {
+        display: flex;
+        width: 990px;
+        margin: 180px auto;
+        justify-content: center;
+    }
+
+    #membership>a {
+        color: black;
+        font-size: 30px;
+        padding: 5px 30px;
+        margin-left: 390px;
+        display: block;
+    }
+
+    #membership>table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 420px;
+        height: 140px;
+        margin: 10px auto;
+    }
+
+    #membership td, #membership th, #membership tr {
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    #membership th {
+        width: 100px;
+        height: 60px;
+    }
+
+    /*로그인 모달 끝*/
+
+    footer {
+        margin-top: 30px;
+        height: 320px;
+        background-color: #5e7c85af;
+    }
+
+    #footmenu {
+        position: relative;
+    }
+
+    #footmenu li>a {
+        font-size: 15px;
+        padding: 14px;
+        color: rgba(255, 255, 255, 0.699);
+    }
+
+    #footmenu li>a:hover {
+        color: white;
+        text-shadow: 0 0 3px black;
+    }
+
+    #footmenu li>a:first-child {
+        margin-left: 0;
+    }
+
+    footer #info {
+        width: 50%;
+        border-right: 1px solid white;
+        margin-top: 30px;
+    }
+
+    #footlogo {
+        width: 144px;
+        margin-top: 120px;
+    }
+
+    #footlogo img {
+        width: 100%;
+    }
+
+    footer>div:last-child {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer p {
+        line-height: 2em;
+        color: rgba(255, 255, 255, 0.699);
+    }
+
+    #footmenu>li {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    #pcheader #hidden_nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        background-color: white
+    }
+
+    @media screen and (max-width:1024px) {
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #pcheader {
+            display: none;
+        }
+        #mobheader {
+            display: block;
+        }
+        #mobheader {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style-type: none;
+            box-sizing: border-box;
+        }
+        #mobheader #mobheadtop{
+            display: flex;
+            justify-content: space-between;
+        }
+        #mobheader #moblogo>a>img{
+            width: 100px; height: 50px;
+        }
+        #mobheader #mobheadtop{
+            padding: 5px;
+            padding-top: 10px;
+        }
+        #mobheader #mobheadtop>a>i{
+            font-size: 40px;
+            color: #555;
+        }
+        #mobheader a {
+            color: black;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        #mobheader .mobmodal {
+            display: none;
+        }
+        #mobheader .mobcatebg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.596);
+            overflow: hidden;
+            z-index: 6;
+        }
+        #mobheader .mobcate-1 {
+            width: 320px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgb(255, 255, 255);
+            z-index: 10;
+        }
+        #mobheader .mobcate-1>div{
+            height: 90px;
+        }
+        #mobheader .mobcate-1>div>p{
+            padding-top: 16px;
+            font-size: 23px;
+            padding-left: 10px;
+        }
+        #mobheader .mobcateoff {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 10px;
+            left: 260px;
+            margin: 10px;
+        }
+        
+        #mobheader .mobcateoff>div {
+            width: 40px;
+            height: 4px;
+            background-color: #5763e6;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #mobheader .mobcateoff>div:first-child {
+            transform: rotate(45deg);
+        }
+        #mobheader .mobcateoff>div:last-child {
+            transform: rotate(-45deg);
+        }
+        #mobheader .moblogin-join {
+            width: 100%;
+            border-bottom: 1px solid #0000001f;
+            box-sizing: border-box;
+            display: flex;
+            margin-top: 10px;
+            padding-bottom: 10px;
+        }
+        #mobheader .moblogin-join>a {
+            width: 46%;
+            height: 36px;
+            margin: 2%;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 6px;
+        }
+        #mobheader .moblogin-join>a:first-child {
+            background-color: #5763e6;
+            color: #fff;
+            font-weight: bold;
+        }
+        #mobheader .moblogin-join>a:last-child {
+            color: #5763e6;
+            border: 1px solid #5763e6;
+            font-weight: bold;
+        }
+        #mobheader .mobmenu {
+            background-color: #fff;
+        }
+        #mobheader .mobmenu li {
+            height: 36px;
+            border-bottom: 0.1px solid #00000020;
+        }
+        #mobheader .mobmenu>ul>div>li>a {
+            width: 100%;
+            height: 100%;
+            padding: 6px;
+            padding-left: 24px;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.055);
+            text-shadow: 2px 2px 3px #fff;
+        }
+        /*.mobmenu>ul{
+        
+        }*/
+        #mobheader .mobmenu>ul>a {
+            border-bottom: 0.1px solid #00000020;
+            font-weight: bold;
+            font-size: 20px;
+            position: relative;
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            padding-left: 12px;
+        }
+        #mobheader .mobmenu>ul>a>div {
+            width: 16px;
+            height: 2px;
+            background-color: #000000;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+        }
+        #mobheader .mobmenu>ul>a>div:first-child {
+            transform: rotate(90deg);
+        }
+        #mobheader .mobmenu>ul>div {
+            display: none;
+        }
+        #mobheader sub {
+            padding: 10px;
+        }
+        footer {
+            height: 320px;
+            background-color: #5e7c85af;
+        }
+    
+        #footmenu {
+            position: relative;
+        }
+    
+        #footmenu li>a {
+            font-size: 15px;
+            padding: 14px;
+            color: rgba(255, 255, 255, 0.699);
+        }
+    
+        #footmenu li>a:hover {
+            color: white;
+            text-shadow: 0 0 3px black;
+        }
+    
+        #footmenu li>a:first-child {
+            margin-left: 0;
+        }
+    
+        footer #info {
+            width: 50%;
+            font-size: 10px;
+            border-right: 1px solid white;
+            margin-top: 30px;
+        }
+    
+        #footlogo {
+            width: 144px;
+            margin-top: 120px;
+        }
+    
+        #footlogo img {
+            width: 100%;
+        }
+    
+        footer>div:last-child {
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        footer p {
+            line-height: 2em;
+            color: rgba(255, 255, 255, 0.699);
+        }
+    
+        #footmenu>li {
+            display: inline-block;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        footer .inner {
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+    
+    }

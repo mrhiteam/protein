@@ -1,0 +1,205 @@
+
+    .pinfo__img>img {
+        height: 60%;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    * {
+
+        box-sizing: border-box;
+        list-style-type: none;
+    }
+
+    @import 'reset.css';
+    @import 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap';
+
+    #container {
+        width: 100%;
+        height: 100%;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    section {
+        margin: 0 auto;
+        width: 1024px;
+        height: 100%;
+        padding: 10px;
+    }
+
+    .pinfo {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .pinfo__img {
+        width: 49%;
+        display: flex;
+        margin: 0.5%
+    }
+
+
+
+
+    .pinfo__info {
+        width: 49%;
+        margin: 0.5%
+    }
+
+    .box {
+        margin-bottom: 10px;
+        line-height: 1.5em;
+        padding: 16px;
+        text-align: right;
+    }
+
+    .pabout {
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+
+    .pabout__tabs {
+        display: flex;
+        flex-direction: row;
+        /*div가 아니여도 적용된다. 모든 요소 다 되는 듯*/
+        justify-content: space-around;
+        cursor: pointer;
+
+    }
+
+    .tabs__link {
+        padding: 15px;
+        width: 25%;
+        text-align: center;
+        border-bottom: 1px solid #5763e6;
+        font-weight: bold;
+    }
+
+    .tabs__link.current {
+        background-color: #5763e6;
+        color: #fff;
+    }
+
+
+
+    .tabs__content {
+        display: none;
+    }
+
+    .tabs__content.current {
+        display: inherit;
+    }
+
+    .question__flex1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        /* direction으로 먼저 설정하고 justify-content를 실행한다*/
+    }
+
+    .flex1__write {
+        padding: 10px 20px;
+
+    }
+
+    .flex1__write>a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .content__first {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .content__second {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .aa {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .question__list {
+        padding: 10px;
+    }
+
+    .question__list>a {
+        text-decoration: none;
+        color: black;
+        margin: 10px;
+        font-weight: bold;
+    }
+
+    #tab-4>img {
+        width: 100%;
+    }
+
+    .info__status>button {
+        margin: 10px 0;
+
+        padding: 10px;
+        font-size: 18px;
+        background-color: #00000060;
+        color: #fff;
+
+    }
+
+    .pabout__tabs {
+        margin-bottom: 30px;
+    }
+
+    .info__other {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info__other>input {
+        height: 60px;
+        font-weight: bold;
+        font-size: 24px;
+        padding: 0;
+        text-align: center;
+        border: 1px solid black;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    .info__other>input:nth-child(1) {
+        width: 38%;
+    }
+
+    .info__other>input:nth-child(2) {
+        width: 12%;
+    }
+
+    .info__other>input:nth-child(3) {
+        width: 46%;
+        border: none;
+        background-color: black;
+        color: #fff;
+    }
+
+    .pinfo__info>div {
+        border: 1px solid #00000030;
+    }
+
+    .info__name>p {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    #tab-1>img {
+        width: 100%;
+        border: 1px solid #5763e6;
+    }
